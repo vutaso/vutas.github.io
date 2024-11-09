@@ -7,7 +7,7 @@
     <meta name="description" content="Vutas Studio offers innovative iOS applications like Vutas QRBay for QR code and barcode scanning, and Vutas Money: Expense Manager to help you track income and expenses effortlessly.">
     <meta name="keywords" content="Vutas QRBay, QR code app, barcode scanner, free QR code generator, Vutas MoneyBay, expense tracker, finance app, iOS applications">
     <link rel="canonical" href="https://vutas.net">
-    <style>
+  <style>
         /* Reset CSS */
         * {
             margin: 0;
@@ -115,18 +115,45 @@
             padding: 60px 20px;
         }
 
-        /* Services Section */
-        .services .intro-text {
-            font-size: 1.3em;
+        /* Common Styles for About, Services, and Contact Sections */
+        #about, #contact, #services {
+            background: #f1f1f1;
+            padding: 80px 20px;
+        }
+
+        #about h2, #contact h2, #services h2 {
+            font-size: 2.5em;
             color: #000;
             text-align: center;
-            font-weight: 600;
-            margin: 0 auto 30px auto;
+            margin-bottom: 20px;
+        }
+
+        .about-content, .contact-content, .services-content {
             background: #fff;
-            padding: 15px 30px;
+            padding: 30px;
+            max-width: 800px;
+            margin: 0 auto;
             border-radius: 10px;
-            max-width: 700px;
-            box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .about-content p, .contact-content p, .services-content p {
+            font-size: 1.2em;
+            color: #333;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .contact-content a {
+            color: #000;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-content a:hover {
+            color: #333;
         }
 
         /* App Cards */
@@ -135,6 +162,7 @@
             gap: 20px;
             flex-wrap: wrap;
             justify-content: center;
+            margin-top: 30px;
         }
 
         .app {
@@ -179,47 +207,6 @@
             background-color: #333;
         }
 
-        /* About Us and Contact Us Section Styling */
-        #about, #contact {
-            background: #f1f1f1;
-            padding: 80px 20px;
-        }
-
-        #about h2, #contact h2 {
-            font-size: 2.5em;
-            color: #000;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .about-content, .contact-content {
-            background: #fff;
-            padding: 30px;
-            max-width: 800px;
-            margin: 0 auto;
-            border-radius: 10px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .about-content p, .contact-content p {
-            font-size: 1.2em;
-            color: #333;
-            font-weight: 500;
-            margin: 0;
-        }
-
-        .contact-content a {
-            color: #000;
-            font-weight: bold;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .contact-content a:hover {
-            color: #333;
-        }
-
         /* Footer Styles */
         footer {
             background: #000;
@@ -257,7 +244,9 @@
     <section id="services" class="services">
         <div class="container">
             <h2>Our Services</h2>
-            <p class="intro-text">Discover our innovative iOS applications</p>
+            <div class="services-content">
+                <p>Discover our innovative iOS applications</p>
+            </div>
             <div class="app-list">
                 <div class="app">
                     <h3 class="app-title">Vutas QRBay</h3>
