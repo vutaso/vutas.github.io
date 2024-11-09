@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vutas Studio | iOS Apps - Vutas QRBay and Vutas Money</title>
     <meta name="description" content="Vutas Studio offers innovative iOS applications like Vutas QRBay for QR code and barcode scanning, and Vutas Money: Expense Manager to help you track income and expenses effortlessly.">
-    <meta name="keywords" content="Vutas QRBay, QR code app, barcode scanner, free QR code generator, Vutas Money, expense tracker, finance app, iOS applications">
+    <meta name="keywords" content="Vutas QRBay, QR code app, barcode scanner, free QR code generator, Vutas MoneyBay, expense tracker, finance app, iOS applications">
     <link rel="canonical" href="https://vutas.net">
     <style>
         /* Reset CSS */
@@ -19,7 +19,7 @@
         /* General Styles */
         body {
             color: #333;
-            background-color: #f9f9f9;
+            background-color: #fff;
             line-height: 1.6;
         }
 
@@ -30,184 +30,84 @@
             padding: 20px;
         }
 
-       /* Header Styles */
-header {
-    background: linear-gradient(135deg, #ff6b35, #ff9d5a); /* Gradient background for a vibrant look */
-    color: #fff;
-    padding: 15px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
+        /* Header */
+        header {
+            background: #000;
+            color: #fff;
+            padding: 15px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-header h1 {
-    font-size: 2em;
-    font-weight: bold;
-    color: #ffffff;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Add shadow for text prominence */
-    margin-left: 20px; /* Left padding for alignment */
-    transition: color 0.3s ease;
-}
+        header h1 {
+            font-size: 2em;
+            font-weight: bold;
+            margin-left: 20px;
+            color: #fff;
+        }
 
-header h1:hover {
-    color: #ffd7a8; /* Hover color change for title */
-}
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            margin-right: 20px;
+        }
 
-header nav ul {
-    list-style: none;
-    display: flex;
-    gap: 25px;
-    margin-right: 20px; /* Right padding for alignment */
-}
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px;
+            transition: color 0.3s ease;
+        }
 
-header nav ul li {
-    position: relative; /* Allows underline effect */
-}
+        header nav ul li a:hover {
+            color: #666;
+        }
 
-header nav ul li a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1em;
-    transition: color 0.3s ease, transform 0.3s ease;
-    padding: 5px;
-}
+        /* Hero Section with Color-Changing Background */
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            color: #fff;
+            background: linear-gradient(270deg, #ff6b35, #ff9d5a, #8a2be2, #33a1fd, #00c4b4, #ff007f);
+            background-size: 1200% 1200%;
+            animation: colorShift 12s ease-in-out infinite;
+        }
 
-header nav ul li a:hover {
-    color: #ffd7a8; /* Lighter color on hover */
-    transform: translateY(-3px); /* Slight lift effect on hover */
-}
+        @keyframes colorShift {
+            0% { background-position: 0% 50%; }
+            25% { background-position: 50% 50%; }
+            50% { background-position: 100% 50%; }
+            75% { background-position: 50% 50%; }
+            100% { background-position: 0% 50%; }
+        }
 
-header nav ul li a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    width: 0;
-    height: 2px;
-    background-color: #ffd7a8; /* Underline color */
-    transition: width 0.3s ease; /* Animate underline width */
-}
-
-header nav ul li a:hover::after {
-    width: 100%; /* Full underline on hover */
-}
-
-/* Responsive Design for Mobile */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        padding: 20px;
-    }
-    
-    header h1 {
-        font-size: 1.8em;
-        margin-bottom: 10px;
-    }
-    
-    header nav ul {
-        gap: 15px;
-    }
-    
-    header nav ul li a {
-        font-size: 0.9em;
-    }
-}
-
-
-/* Hero Section with Enhanced Multi-Color Animated Background */
-/* Hero Section with Waving Flag Effect */
-.hero {
-    text-align: center;
-    padding: 100px 20px;
-    color: #fff;
-    background: linear-gradient(
-        120deg,
-        #ff6b35, 
-        #ff9d5a, 
-        #ffcc73, 
-        #ffa8e2, 
-        #7f78d2, 
-        #33a1fd, 
-        #00c4b4, 
-        #ff6b35, 
-        #ff007f, 
-        #ff6b35,
-        #8a2be2,
-        #33cc33,
-        #ff69b4
-    ); /* Enhanced gradient with more colors */
-    background-size: 200% 200%; /* Large background size for smooth waving effect */
-    animation: waveEffect 8s ease-in-out infinite, fadeEffect 8s ease-in-out infinite; /* Apply waving animation with fade */
-}
-
-/* Keyframes for Waving Flag Effect */
-@keyframes waveEffect {
-    0% {
-        background-position: 0% 50%;
-        transform: scale(1) skewX(0deg);
-    }
-    25% {
-        background-position: 50% 55%;
-        transform: scale(1.05) skewX(-3deg);
-    }
-    50% {
-        background-position: 100% 50%;
-        transform: scale(1) skewX(3deg);
-    }
-    75% {
-        background-position: 50% 45%;
-        transform: scale(1.05) skewX(-3deg);
-    }
-    100% {
-        background-position: 0% 50%;
-        transform: scale(1) skewX(0deg);
-    }
-}
-
-/* Keyframes for Fade Effect */
-@keyframes fadeEffect {
-    0%, 100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.98;
-    }
-}
-
-
-
-
-        /* Updated Title Text */
         .hero h2 {
             font-size: 3.5em;
-            color: #ffffff;
             font-weight: bold;
             margin-bottom: 10px;
         }
 
-        /* Highlighted Text */
         .highlight-text {
             font-size: 1.5em;
             font-weight: 600;
-            color: #fff5e1;
-            background: linear-gradient(to right, #ff9d5a, #ff6b35);
+            background: #000;
             padding: 10px 20px;
             border-radius: 8px;
-            display: inline-block;
             margin-top: 15px;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            color: #fff;
             transition: transform 0.2s ease-in-out;
         }
 
         .highlight-text:hover {
             transform: scale(1.05);
-            background: linear-gradient(to right, #ff6b35, #ff9d5a);
+            background: #333;
         }
 
         /* Section Styles */
@@ -215,30 +115,19 @@ header nav ul li a:hover::after {
             padding: 60px 20px;
         }
 
-        section h2 {
-            font-size: 2em;
-            color: #ff6b35;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
         /* Services Section */
-       /* Center-aligned Intro Text */
         .services .intro-text {
             font-size: 1.3em;
-            color: #fff;
+            color: #000;
             text-align: center;
             font-weight: 600;
-            margin: 0 auto 30px auto; /* Update margin to center it */
-            background: linear-gradient(135deg, #ff6b35, #ff9d5a);
+            margin: 0 auto 30px auto;
+            background: #fff;
             padding: 15px 30px;
             border-radius: 10px;
-            box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
             max-width: 700px;
-            display: block; /* Ensure it takes the correct width */
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
         }
-
 
         /* App Cards */
         .app-list {
@@ -257,30 +146,20 @@ header nav ul li a:hover::after {
             flex: 1;
             min-width: 250px;
             max-width: 300px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border-top: 4px solid #ff6b35;
-        }
-
-        .app:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border-top: 4px solid #000;
         }
 
         .app-title {
             font-size: 1.8em;
-            color: #ff6b35;
+            color: #000;
             font-weight: bold;
             margin-bottom: 10px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
         }
 
         .app-description {
             font-size: 1em;
             color: #555;
             margin: 10px 0;
-            background: linear-gradient(to right, #ffedd5, #ffeed0);
-            padding: 10px;
-            border-radius: 5px;
         }
 
         .app-link {
@@ -288,8 +167,8 @@ header nav ul li a:hover::after {
             margin-top: 15px;
             font-size: 1.1em;
             font-weight: bold;
-            color: #ffffff;
-            background-color: #ff6b35;
+            color: #fff;
+            background-color: #000;
             padding: 10px 20px;
             border-radius: 8px;
             text-decoration: none;
@@ -297,128 +176,59 @@ header nav ul li a:hover::after {
         }
 
         .app-link:hover {
-            background-color: #e86425;
+            background-color: #333;
         }
 
-        /* About Us Section Styling */
-        #about {
-            background: linear-gradient(135deg, #f9f9f9, #e6e6e6);
+        /* About Us and Contact Us Section Styling */
+        #about, #contact {
+            background: #f1f1f1;
             padding: 80px 20px;
         }
 
-        #about h2 {
+        #about h2, #contact h2 {
             font-size: 2.5em;
-            color: #ff6b35;
+            color: #000;
             text-align: center;
             margin-bottom: 20px;
-            text-transform: uppercase;
-            font-weight: bold;
         }
 
-        .about-content {
-            background: #ffffff;
+        .about-content, .contact-content {
+            background: #fff;
             padding: 30px;
             max-width: 800px;
             margin: 0 auto;
             border-radius: 10px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
             text-align: center;
-            line-height: 1.8;
         }
 
-        .about-content p {
+        .about-content p, .contact-content p {
             font-size: 1.2em;
             color: #333;
-            margin: 0;
             font-weight: 500;
+            margin: 0;
         }
 
-        /* Styling for subtle animations */
-        #about h2, .about-content {
-            animation: fadeInUp 1s ease-in-out;
+        .contact-content a {
+            color: #000;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.3s;
         }
 
-        @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .contact-content a:hover {
+            color: #333;
         }
-
-         /* Contact Section Styling */
-    #contact {
-        background: #f7f7f7;
-        padding: 80px 20px;
-    }
-
-    #contact h2 {
-        font-size: 2.5em;
-        color: #ff6b35;
-        text-align: center;
-        margin-bottom: 20px;
-        text-transform: uppercase;
-        font-weight: bold;
-    }
-
-    .contact-info {
-        background: #ffffff;
-        padding: 30px;
-        max-width: 600px;
-        margin: 0 auto;
-        border-radius: 10px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-        text-align: center;
-    }
-
-    .contact-info p {
-        font-size: 1.2em;
-        color: #333;
-        margin: 15px 0;
-    }
-
-    .contact-info a {
-        color: #ff6b35;
-        text-decoration: none;
-        font-weight: bold;
-        transition: color 0.3s;
-    }
-
-    .contact-info a:hover {
-        color: #e86425;
-    }
 
         /* Footer Styles */
         footer {
-            background: #333;
+            background: #000;
             color: #fff;
             text-align: center;
             padding: 15px 0;
             font-size: 0.9em;
         }
     </style>
-       <!-- Structured Data for SEO -->
-    <script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "Organization",
-        "name": "Vutas Studio",
-        "url": "https://vutas.net",
-        "logo": "https://vutas.net/logo.png",
-        "sameAs": [
-            "https://www.facebook.com/vutas.studio"
-        ],
-        "description": "Vutas Studio develops iOS apps such as Vutas QRBay for scanning QR codes and barcodes, and Vutas MoneyBay, a personal finance manager app.",
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "email": "vutas.studio@gmail.com",
-            "contactType": "Customer Service"
-        }
-    }
-    </script>
 </head>
 <body>
     <!-- Header Section -->
@@ -447,24 +257,18 @@ header nav ul li a:hover::after {
     <section id="services" class="services">
         <div class="container">
             <h2>Our Services</h2>
-            <p class="intro-text">Discover our innovative iOS applications:</p>
+            <p class="intro-text">Discover our innovative iOS applications</p>
             <div class="app-list">
                 <div class="app">
                     <h3 class="app-title">Vutas QRBay</h3>
-                    <p class="app-description"><b>Vutas QRBay</b> is a versatile QR code and barcode scanning app, offering features from quick scanning to completely free QR code generation. It is a useful tool for users to easily access information, check product prices, and much more.</p>
-                    <a href="https://apps.apple.com/app/qrbay/id6499323043" target="_blank" class="app-link">
-                        Download on App Store
-                    </a>
-                    <a href="https://vutas.net/qrbay/" target="_blank" class="app-link">
-                        More Info
-                    </a>
+                    <p class="app-description"><b>Vutas QRBay</b> is a versatile QR code and barcode scanning app, offering features from quick scanning to completely free QR code generation.</p>
+                    <a href="https://apps.apple.com/app/qrbay/id6499323043" target="_blank" class="app-link">Download on App Store</a>
+                    <a href="https://vutas.net/qrbay/" target="_blank" class="app-link">More Info</a>
                 </div>
                 <div class="app">
                     <h3 class="app-title">Vutas MoneyBay</h3>
-                    <p class="app-description"><b>Vutas MoneyBay: Expense Manager</b> is a personal finance app designed to help users track income and expenses efficiently.</p>
-                    <a href="#" target="_blank" class="app-link">
-                        Coming Soon
-                    </a>
+                    <p class="app-description"><b>Vutas MoneyBay: Expense Manager</b> helps track income and expenses efficiently.</p>
+                    <a href="#" target="_blank" class="app-link">Coming Soon</a>
                 </div>
             </div>
         </div>
@@ -475,21 +279,22 @@ header nav ul li a:hover::after {
         <div class="container">
             <h2>About Us</h2>
             <div class="about-content">
-                <p>Vutas Studio is a dedicated team of developers and designers committed to delivering high-quality iOS applications that elevate the user experience and bring new dimensions to mobile innovation.</p>
+                <p>Vutas Studio is a team committed to delivering high-quality iOS applications that elevate the user experience.</p>
             </div>
         </div>
     </section>
 
-   <!-- Contact Section -->
-<section id="contact" class="contact">
-    <div class="container">
-        <h2>Contact Us</h2>
-        <div class="contact-info">
-            <p><strong>Facebook:</strong> <a href="https://www.facebook.com/vutas.studio" target="_blank">https://www.fb.com/vutas.studio</a></p>
-            <p><strong>Email:</strong> <a href="mailto:vutas.studio@gmail.com">vutas.studio@gmail.com</a></p>
+    <!-- Contact Us Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-content">
+                <p><strong>Facebook:</strong> <a href="https://www.facebook.com/vutas.studio" target="_blank">fb.com/vutas.studio</a></p>
+                <p><strong>Facebook QRBay:</strong> <a href="https://www.facebook.com/qrbayapp" target="_blank">fb.com/qrbayapp</a></p>
+                <p><strong>Email:</strong> <a href="mailto:vutas.studio@gmail.com">vutas.studio@gmail.com</a></p>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Footer Section -->
     <footer>
