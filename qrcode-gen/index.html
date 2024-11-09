@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QRBay - Free QR Code Generator & Barcode Reader</title>
+
+    <!-- Meta Description -->
+    <meta name="description" content="Generate your own QR codes for free with QRBay. Customize colors, sizes, and download or share your QR codes easily. QRBay also offers a powerful QR code scanner and barcode reader app available on the App Store.">
+
+    <!-- Meta Keywords -->
+    <meta name="keywords" content="QRBay, QR code generator, free QR code, QR scanner, barcode reader, QR code maker, customize QR code, QR code download, QR code share, QRBay app, QRBay barcode reader">
+
+    <!-- Meta Robots -->
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Meta Tags (For Social Media Sharing) -->
+    <meta property="og:title" content="QRBay - Free QR Code Generator & Barcode Reader">
+    <meta property="og:description" content="Generate your own QR codes for free with QRBay. Customize colors, sizes, and download or share your QR codes easily. QRBay also offers a powerful QR code scanner and barcode reader app available on the App Store.">
+    <meta property="og:url" content="https://qrbay.net">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://qrbay.net/assets/images/qrbay-thumbnail.png">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="QRBay - Free QR Code Generator & Barcode Reader">
+    <meta name="twitter:description" content="Generate your own QR codes for free with QRBay. Customize colors, sizes, and download or share your QR codes easily. QRBay also offers a powerful QR code scanner and barcode reader app available on the App Store.">
+    <meta name="twitter:image" content="https://qrbay.net/assets/images/qrbay-thumbnail.png">
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  </head>
+  <body>
+    <section>
+      <h1 class="title">QRBay - CREATE YOUR QR CODE FOR FREE</h1>
+      <div class="row">
+        <input type="color" class="light color-picker" value="#FFFFFF" />
+        <input type="color" class="dark color-picker" />
+        <select class="sizes dropdown">
+          <option value="100">100x100</option>
+          <option value="200">200x200</option>
+          <option value="300">300x300</option>
+          <option selected value="400">400x400</option>
+          <option value="500">500x500</option>
+          <option value="600">600x600</option>
+          <option value="700">700x700</option>
+          <option value="800">800x800</option>
+          <option value="900">900x900</option>
+          <option value="1000">1000x1000</option>
+        </select>
+      </div>
+
+      <input type="text" placeholder="Enter text or URL for QR code" class="qr-text enhanced-input" />
+
+      <div id="qr-code" class="qr-code-container"></div>
+      <div class="action-container">
+        <a href="#" download="QRCode" class="download btn">
+          <span>Download</span>
+          <img src="./assets/icons/download.svg" alt="Download icon" />
+        </a>
+        <button class="btn share-btn">
+          <span>Share</span>
+          <img src="./assets/icons/share.svg" alt="Share icon" />
+        </button>
+      </div>
+      <footer class="footer">
+        <p>‘QR Code’ is a registered trademark of DENSO WAVE INCORPORATED</p>
+        <p>&copy; 2024 <a href="https://qrbay.net" target="_blank">qrbay.net</a> | <a href="https://apps.apple.com/app/qrbay/id6499323043" target="_blank">Download QRBay App</a></p>
+      </footer>
+    </section>
+    <script defer src="main.js"></script>
+  </body>
+</html>
