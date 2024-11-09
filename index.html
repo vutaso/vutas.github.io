@@ -27,45 +27,157 @@
             padding: 20px;
         }
 
-        /* Header Styles */
-        header {
-            background: #ff6b35;
-            color: #fff;
-            padding: 20px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+       /* Header Styles */
+header {
+    background: linear-gradient(135deg, #ff6b35, #ff9d5a); /* Gradient background for a vibrant look */
+    color: #fff;
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-        header h1 {
-            font-size: 1.8em;
-            font-weight: bold;
-        }
+header h1 {
+    font-size: 2em;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Add shadow for text prominence */
+    margin-left: 20px; /* Left padding for alignment */
+    transition: color 0.3s ease;
+}
 
-        header nav ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
+header h1:hover {
+    color: #ffd7a8; /* Hover color change for title */
+}
 
-        header nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1em;
-        }
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin-right: 20px; /* Right padding for alignment */
+}
 
-        header nav ul li a:hover {
-            color: #f4a261;
-        }
+header nav ul li {
+    position: relative; /* Allows underline effect */
+}
 
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 100px 20px;
-            background: #ff6b35;
-            color: #fff;
-        }
+header nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em;
+    transition: color 0.3s ease, transform 0.3s ease;
+    padding: 5px;
+}
+
+header nav ul li a:hover {
+    color: #ffd7a8; /* Lighter color on hover */
+    transform: translateY(-3px); /* Slight lift effect on hover */
+}
+
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: #ffd7a8; /* Underline color */
+    transition: width 0.3s ease; /* Animate underline width */
+}
+
+header nav ul li a:hover::after {
+    width: 100%; /* Full underline on hover */
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    header h1 {
+        font-size: 1.8em;
+        margin-bottom: 10px;
+    }
+    
+    header nav ul {
+        gap: 15px;
+    }
+    
+    header nav ul li a {
+        font-size: 0.9em;
+    }
+}
+
+
+/* Hero Section with Enhanced Multi-Color Animated Background */
+/* Hero Section with Waving Flag Effect */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    color: #fff;
+    background: linear-gradient(
+        120deg,
+        #ff6b35, 
+        #ff9d5a, 
+        #ffcc73, 
+        #ffa8e2, 
+        #7f78d2, 
+        #33a1fd, 
+        #00c4b4, 
+        #ff6b35, 
+        #ff007f, 
+        #ff6b35,
+        #8a2be2,
+        #33cc33,
+        #ff69b4
+    ); /* Enhanced gradient with more colors */
+    background-size: 200% 200%; /* Large background size for smooth waving effect */
+    animation: waveEffect 8s ease-in-out infinite, fadeEffect 8s ease-in-out infinite; /* Apply waving animation with fade */
+}
+
+/* Keyframes for Waving Flag Effect */
+@keyframes waveEffect {
+    0% {
+        background-position: 0% 50%;
+        transform: scale(1) skewX(0deg);
+    }
+    25% {
+        background-position: 50% 55%;
+        transform: scale(1.05) skewX(-3deg);
+    }
+    50% {
+        background-position: 100% 50%;
+        transform: scale(1) skewX(3deg);
+    }
+    75% {
+        background-position: 50% 45%;
+        transform: scale(1.05) skewX(-3deg);
+    }
+    100% {
+        background-position: 0% 50%;
+        transform: scale(1) skewX(0deg);
+    }
+}
+
+/* Keyframes for Fade Effect */
+@keyframes fadeEffect {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.98;
+    }
+}
+
+
+
 
         /* Updated Title Text */
         .hero h2 {
@@ -108,20 +220,22 @@
         }
 
         /* Services Section */
+       /* Center-aligned Intro Text */
         .services .intro-text {
             font-size: 1.3em;
             color: #fff;
             text-align: center;
             font-weight: 600;
-            margin: 15px auto 30px auto;
+            margin: 0 auto 30px auto; /* Update margin to center it */
             background: linear-gradient(135deg, #ff6b35, #ff9d5a);
             padding: 15px 30px;
             border-radius: 10px;
             box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
             max-width: 700px;
-            display: inline-block;
+            display: block; /* Ensure it takes the correct width */
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
         }
+
 
         /* App Cards */
         .app-list {
