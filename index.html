@@ -1,160 +1,360 @@
 <!DOCTYPE html>
-<html dir="auto" lang="vi">
+<html lang="en">
 <head>
-	<meta charset="UTF-8" />
-	<title>QRBay | Máy quét mã QR và đầu đọc mã vạch</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vutas Studio</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
 
-	<meta name="description" content="QRBay | Máy quét mã QR và đầu đọc mã vạch" />
-	<meta name="keywords" content="QRBay, QRBay.net, Máy quét mã QR, Đầu đọc mã vạch, Hỗ trợ ứng dụng, Quét mã QR, Tra cứu thông tin sản phẩm, Ứng dụng QR miễn phí, Đầu đọc mã QR trên di động, Máy tạo mã QR, Quét mã vạch, Quản lý kho, Trợ lý mua sắm, So sánh sản phẩm, Tính năng mã QR, Ứng dụng quét mã vạch, Máy quét mã QR nhanh chóng, Công nghệ mã QR, Ứng dụng thân thiện với người dùng, Đầu đọc mã vạch đa chức năng, Mã QR cho tiếp thị, Quét và chia sẻ, Quét mã QR ngoại tuyến, Quét mã QR an toàn, Theo dõi mã QR, Phân tích mã QR, Phiếu giảm giá kỹ thuật số, Thanh toán không tiếp xúc, Tích hợp ví di động, Tùy chỉnh mã QR, Phát hành vé sự kiện, Tương tác khách hàng, Giải pháp mã QR, Giao diện thân thiện với người dùng, Máy quét QR trên Android, Máy quét QR trên iOS, Quét mã QR dễ dàng, Truy cập mã QR tức thì, Mua sắm trên di động, Giải pháp công nghệ, Mã QR liên hệ, Mã QR URL, Mã QR email, Mã QR vCard, Mã QR SMS, Mã QR Wi-Fi, Các loại mã vạch, Mã vạch EAN, Mã vạch UPC, Mã 128, Tạo mã QR, Tạo mã vạch, Mã QR động, Mã QR tĩnh, Ứng dụng mã QR trên iOS, Ứng dụng mã QR trên Android, Máy quét QR tốt nhất cho iOS, Máy quét QR tốt nhất cho Android, Đầu đọc mã QR cho iPhone, Đầu đọc mã QR cho Android, Quét QR đa nền tảng, Tương thích di động">
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="icon" href="assets/favicon.ico" />
+        /* General Styles */
+        body {
+            color: #333;
+            background-color: #f9f9f9;
+            line-height: 1.6;
+        }
 
-	<meta property="og:title" content="QRBay | Máy quét mã QR và đầu đọc mã vạch" />
-	<meta property="og:description" content="QRBay | Máy quét mã QR và đầu đọc mã vạch" />
-	<meta property="og:image" content="assets/og-image.png" />
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-	<link rel="stylesheet" href="assets/tobi.css" />
-	<link rel="stylesheet" href="assets/style.css" />
+        /* Header Styles */
+        header {
+            background: #ff6b35;
+            color: #fff;
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
+        header h1 {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1em;
+        }
+
+        header nav ul li a:hover {
+            color: #f4a261;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: #ff6b35;
+            color: #fff;
+        }
+
+        /* Updated Title Text */
+        .hero h2 {
+            font-size: 3.5em;
+            color: #ffffff;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* Highlighted Text */
+        .highlight-text {
+            font-size: 1.5em;
+            font-weight: 600;
+            color: #fff5e1;
+            background: linear-gradient(to right, #ff9d5a, #ff6b35);
+            padding: 10px 20px;
+            border-radius: 8px;
+            display: inline-block;
+            margin-top: 15px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .highlight-text:hover {
+            transform: scale(1.05);
+            background: linear-gradient(to right, #ff6b35, #ff9d5a);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 60px 20px;
+        }
+
+        section h2 {
+            font-size: 2em;
+            color: #ff6b35;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* Services Section */
+        .services .intro-text {
+            font-size: 1.3em;
+            color: #fff;
+            text-align: center;
+            font-weight: 600;
+            margin: 15px auto 30px auto;
+            background: linear-gradient(135deg, #ff6b35, #ff9d5a);
+            padding: 15px 30px;
+            border-radius: 10px;
+            box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+            max-width: 700px;
+            display: inline-block;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* App Cards */
+        .app-list {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .app {
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid #ff6b35;
+        }
+
+        .app:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .app-title {
+            font-size: 1.8em;
+            color: #ff6b35;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .app-description {
+            font-size: 1em;
+            color: #555;
+            margin: 10px 0;
+            background: linear-gradient(to right, #ffedd5, #ffeed0);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .app-link {
+            display: inline-block;
+            margin-top: 15px;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #ffffff;
+            background-color: #ff6b35;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .app-link:hover {
+            background-color: #e86425;
+        }
+
+        /* About Us Section Styling */
+        #about {
+            background: linear-gradient(135deg, #f9f9f9, #e6e6e6);
+            padding: 80px 20px;
+        }
+
+        #about h2 {
+            font-size: 2.5em;
+            color: #ff6b35;
+            text-align: center;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .about-content {
+            background: #ffffff;
+            padding: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        .about-content p {
+            font-size: 1.2em;
+            color: #333;
+            margin: 0;
+            font-weight: 500;
+        }
+
+        /* Styling for subtle animations */
+        #about h2, .about-content {
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+         /* Contact Section Styling */
+    #contact {
+        background: #f7f7f7;
+        padding: 80px 20px;
+    }
+
+    #contact h2 {
+        font-size: 2.5em;
+        color: #ff6b35;
+        text-align: center;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    .contact-info {
+        background: #ffffff;
+        padding: 30px;
+        max-width: 600px;
+        margin: 0 auto;
+        border-radius: 10px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    .contact-info p {
+        font-size: 1.2em;
+        color: #333;
+        margin: 15px 0;
+    }
+
+    .contact-info a {
+        color: #ff6b35;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s;
+    }
+
+    .contact-info a:hover {
+        color: #e86425;
+    }
+
+        /* Footer Styles */
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 0.9em;
+        }
+    </style>
 </head>
-	<body>
-		<main>
-<header class="app__header container">
-	<div class="app__logo-wrapper"> <img class="app__logo" src="assets/icon.png" alt="QRBay | Máy quét mã QR và đầu đọc mã vạch"></div>
-	<div class="app__infos">
-		<h1 class="app__name">Ứng dụng QRBay</h1>
-		<p class="app__description">Máy quét mã QR • Đầu đọc mã vạch • Tạo mã QR miễn phí</p>
-		<div class="app__buttons app__buttons--desktop">
-			<a href="https://apps.apple.com/app/qrbay/id6499323043" class="app__button-ios" target="_blank" title="Tải xuống trên Appstore">
-				<img src="assets/ios-badge.svg" alt="Tải xuống trên Appstore">
-			</a>
-		</div>
-	</div>
-</header>
-<div class="app__buttons app__buttons--mobile container">
-	<a href="https://apps.apple.com/app/qrbay/id6499323043" class="app__button-ios" target="_blank" title="Tải xuống trên Appstore">
-		<img src="assets/ios-badge.svg" alt="Tải xuống trên Appstore">
-	</a>
-</div>
-<section class="app__screenshots app__section">
-	<div class="container">
-		<h2 class="app__section-title">Ảnh chụp màn hình</h2>
-	</div>
-	<div class="app__screenshots-wrapper container-desktop">
-		<div class="app__screenshots-list">
-			<a href="assets/1_qrbay_net_scan_qrcodes.jpeg" class="lightbox">
-				<img src="assets/1_qrbay_net_scan_qrcodes.jpeg" class="app__screenshot" alt="" />
-			</a>
-			<a href="assets/2_qrbay_net_scan_barcode.jpeg" class="lightbox">
-				<img src="assets/2_qrbay_net_scan_barcode.jpeg" class="app__screenshot" alt="" />
-			</a>
-			<a href="assets/3_qrbay_net_product_info.jpeg" class="lightbox">
-				<img src="assets/3_qrbay_net_product_info.jpeg" class="app__screenshot" alt="" />
-			</a>
-			<a href="assets/4_qrbay_net_quet_can_cuoc_cong_dan_bang_iphone_cccd.jpeg" class="lightbox">
-				<img src="assets/4_qrbay_net_quet_can_cuoc_cong_dan_bang_iphone_cccd.jpeg" class="app__screenshot" alt="" />
-			</a>
-			<a href="assets/4_qrbay_net_quet_giay_phep_lai_xe_bang__iphone_gplx.jpeg" class="lightbox">
-				<img src="assets/4_qrbay_net_quet_giay_phep_lai_xe_bang__iphone_gplx.jpeg" class="app__screenshot" alt="" />
-			</a>
-			<a href="assets/5_qrbay_net_custom_logo.jpeg" class="lightbox">
-				<img src="assets/5_qrbay_net_custom_logo.jpeg" class="app__screenshot" alt="" />
-			</a>
-			<a href="assets/6_qrbay_net_custom_qrcode.jpeg" class="lightbox">
-				<img src="assets/6_qrbay_net_custom_qrcode.jpeg" class="app__screenshot" alt="" />
-			</a>
-			<a href="assets/7_qrbay_net_result.jpeg" class="lightbox">
-				<img src="assets/7_qrbay_net_result.jpeg" class="app__screenshot" alt="" />
-			</a>
-			<a href="assets/8_qrbay_net_gen_qrcode.jpeg" class="lightbox">
-				<img src="assets/8_qrbay_net_gen_qrcode.jpeg" class="app__screenshot" alt="" />
-			</a>
-			<a href="assets/9_qrbay_net_gen_barcode.jpeg" class="lightbox">
-				<img src="assets/9_qrbay_net_gen_barcode.jpeg" class="app__screenshot" alt="" />
-			</a>
-			<a href="assets/10_qrbay_net_setting.jpeg" class="lightbox">
-				<img src="assets/10_qrbay_net_setting.jpeg" class="app__screenshot" alt="" />
-			</a>
-			<a href="assets/11_qrbay_net_export_csv.jpeg" class="lightbox">
-				<img src="assets/11_qrbay_net_export_csv.jpeg" class="app__screenshot" alt="" />
-			</a>
-		</div>
-	</div>
-</section>
-<section class="app__fulldescription app__section container">
-	<h2 class="app__section-title">Mô tả</h2>
-	<div class="app__fulldescription-content">
-<b>💡Tính năng đa dạng:</b>
-<ul>
-<li>📝 <b>Quét mã QR và mã vạch:</b> Sử dụng camera của thiết bị để quét mã QR và mã vạch trong vài giây.</li>
-<li>🛒 <b>Quét mã vạch để xem giá sản phẩm:</b> Quét mã vạch để nhanh chóng xem thông tin giá cả và chi tiết sản phẩm tại siêu thị hoặc cửa hàng tiện lợi. Điều này giúp bạn dễ dàng so sánh giá, đọc đánh giá sản phẩm và tìm hiểu thêm thông tin qua các công cụ tìm kiếm như Google, Bing, hoặc Amazon. Nhờ đó, bạn có thể đưa ra quyết định mua sắm thông minh hơn, tiết kiệm thời gian và tiền bạc.</li>
-<li>📷 <b>Quét mã QR từ thư viện ảnh</b>.</li>
-<li>🎨 <b>Tạo mã QR và mã vạch:</b> Tạo mã QR và mã vạch của riêng bạn với thiết kế và thông tin tùy chỉnh.</li>
-<li>📚 <b>Quản lý lịch sử của bạn:</b> Lưu và sắp xếp lịch sử quét và tạo mã để dễ dàng truy cập.</li>
-<li>📱 <b>Chia sẻ dễ dàng:</b> Chia sẻ mã QR đã quét và tạo trên các nền tảng xã hội yêu thích của bạn chỉ với vài thao tác.</li>
-<li>🎨 <b>Tùy chỉnh mã QR</b> theo sở thích của bạn.</li>
-<li>📂 <b>Quét hàng loạt:</b> Sử dụng tính năng quét hàng loạt để quét nhiều mã QR và mã vạch cùng một lúc.</li>
-<li>📊 <b>Xuất dữ liệu:</b> Xuất dữ liệu dưới dạng CSV, văn bản, hoặc hình ảnh để dễ dàng phân tích và chia sẻ.</li>
-<li>📁 <b>Các định dạng hỗ trợ:</b> QRCode, Code 39, Code 93, Code 128, EAN-8, EAN-13, UPC-A, UPC-E, ITF, Data Matrix, AZTec, PDF 417, Codabar.</li>
-<li>🌎 <b>Hỗ trợ đa ngôn ngữ:</b> QRBay hỗ trợ đến 18 ngôn ngữ, bao gồm tiếng Anh, tiếng Việt, tiếng Indonesia, tiếng Trung, tiếng Thái, tiếng Hàn, tiếng Nhật, tiếng Pháp, tiếng Đức, tiếng Tây Ban Nha, tiếng Ba Lan, tiếng Thổ Nhĩ Kỳ, tiếng Nga, tiếng Bồ Đào Nha, tiếng Ý, tiếng Hà Lan, tiếng Ả Rập, tiếng Hindi.</li>
-</ul>
-
-	</div>
-</section>
-		</main>
-		
-		<footer class="footer">
-    <div class="container footer__grid">
-        <!-- Logo và bản quyền -->
-        <div class="footer__section footer__logo-section">
-            <img src="assets/icon.png" alt="QRBay Logo" class="footer__logo">
-            <p class="footer__copyright footer__link">
-                <script>document.write('&copy;' + (new Date()).getFullYear());</script><noscript>&copy;2024</noscript><a href="https://apps.apple.com/app/qrbay/id6499323043"> QRBay | Máy quét mã QR và đầu đọc mã vạch</a>
-            </p>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1>Vutas Studio</h1>
+            <nav>
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
+    </header>
 
-        <!-- Liên kết -->
-        <div class="footer__section">
-            <p class="footer__title">Liên kết</p>
-            <ul class="footer__links">
-                <li class="footer__link"><a href="privacy/privacy_vi.html" target="_blank">Chính sách bảo mật</a></li>
-                <li class="footer__link"><a href="terms/terms_vi.html" target="_blank">Điều khoản và điều kiện</a></li>
-                <li class="footer__link"><a href="support/support_vi.html" target="_blank">Câu hỏi thường gặp / Hỗ trợ</a></li>
-                <li class="footer__link"><a href="qrcode-gen" target="_blank">Tạo mã QR trực tuyến</a></li>
-            </ul>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Welcome to Vutas Studio</h2>
+            <p class="highlight-text">Innovative iOS Applications to Enhance Your Digital Experience</p>
         </div>
+    </section>
 
-        <!-- Ngôn ngữ -->
-        <div class="footer__section">
-            <p class="footer__title">Ngôn ngữ</p>
-            <div class="footer__dropdown">
-                <button class="footer__dropbtn">Chọn ngôn ngữ</button>
-                <div class="footer__dropdown-content">
-                    <a href="index_vi.html">Tiếng Việt</a>
-                    <a href="index_en.html">Tiếng Anh</a>
-                    <a href="index_ko.html">Tiếng Hàn</a>
-                    <a href="index_zh.html">Tiếng Trung</a>
-                    <a href="index_ja.html">Tiếng Nhật</a>
-                    <a href="index_th.html">Tiếng Thái</a>
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <p class="intro-text">Discover our innovative iOS applications:</p>
+            <div class="app-list">
+                <div class="app">
+                    <h3 class="app-title">Vutas QRBay</h3>
+                    <p class="app-description"><b>Vutas QRBay</b> is a versatile QR code and barcode scanning app, offering features from quick scanning to completely free QR code generation. It is a useful tool for users to easily access information, check product prices, and much more.</p>
+                    <a href="https://apps.apple.com/app/qrbay/id6499323043" target="_blank" class="app-link">
+                        Download on App Store
+                    </a>
+                </div>
+                <div class="app">
+                    <h3 class="app-title">Vutas Money</h3>
+                    <p class="app-description"><b>Vutas Money: Expense Manager</b> is a personal finance app designed to help users track income and expenses efficiently.</p>
+                    <a href="#" target="_blank" class="app-link">
+                        Coming Soon
+                    </a>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Thông tin bản quyền QR -->
-        <div class="footer__section">
-            <p class="footer__info">QR Code là nhãn hiệu đã đăng ký của DENSO WAVE INCORPORATED tại Hoa Kỳ và các quốc gia khác.</p>
-            <p class="footer__info"><b>Made in Vietnam with ♥️</b></p>
+    <!-- About Us Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <div class="about-content">
+                <p>Vutas Studio is a dedicated team of developers and designers committed to delivering high-quality iOS applications that elevate the user experience and bring new dimensions to mobile innovation.</p>
+            </div>
+        </div>
+    </section>
+
+   <!-- Contact Section -->
+<section id="contact" class="contact">
+    <div class="container">
+        <h2>Contact Us</h2>
+        <div class="contact-info">
+            <p><strong>Facebook:</strong> <a href="https://www.facebook.com/vutas.studio" target="_blank">https://www.fb.com/vutas.studio</a></p>
+            <p><strong>Email:</strong> <a href="mailto:vutas.studio@gmail.com">vutas.studio@gmail.com</a></p>
         </div>
     </div>
-</footer>
+</section>
 
-
-		<script type="text/javascript" src="assets/tobi.min.js" /></script>
-		<script>
-			window.onload = function () {
-				var tobi = new Tobi();
-			};
-		</script>
-
-  </body>
+    <!-- Footer Section -->
+    <footer>
+        &copy; 2024 Vutas Studio - VUTAS.NET
+    </footer>
+</body>
 </html>
