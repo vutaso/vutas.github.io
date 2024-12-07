@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,19 +7,48 @@
     <meta name="description" content="Vutas Studio offers innovative iOS applications like Vutas QRBay for QR code and barcode scanning, and Vutas MoneyBay: Expense Manager to help you track income and expenses effortlessly.">
     <meta name="keywords" content="Vutas QRBay, QR code app, barcode scanner, free QR code generator, Vutas MoneyBay, expense tracker, finance app, iOS applications">
     <link rel="canonical" href="https://vutas.net">
-  <style>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome CDN for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pO3XGIrAWu+Bvd7l+KcXy1h+X+gZl5h3e3g0t1NqKoxWgfOfVZs5EDEbB3X1QDjO7k4P6qdWQo72HAX6cxA4Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <style>
+        /* Define CSS Variables for Maintainability */
+        :root {
+            --primary-color: #000;
+            --secondary-color-qrbay: #ff6b35; /* Màu cam cho QRBay */
+            --secondary-color-moneybay: #33a1fd; /* Màu xanh dương cho MoneyBay */
+            --background-color: #fff;
+            --text-color: #333;
+            --hover-color-qrbay: #e65c2f;
+            --hover-color-moneybay: #2a8bd8;
+            --font-family-body: 'Open Sans', sans-serif;
+            --font-family-heading: 'Montserrat', sans-serif;
+            --icon-size: 1em;
+        }
+
         /* Reset CSS */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: var(--font-family-body);
+        }
+
+        /* Áp dụng font cho các tiêu đề */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-family-heading);
         }
 
         /* General Styles */
         body {
-            color: #333;
-            background-color: #fff;
+            color: var(--text-color);
+            background-color: var(--background-color);
             line-height: 1.6;
         }
 
@@ -32,7 +61,7 @@
 
         /* Header */
         header {
-            background: #000;
+            background: var(--primary-color);
             color: #fff;
             padding: 15px 0;
             display: flex;
@@ -50,6 +79,11 @@
             color: #fff;
         }
 
+        header nav {
+            /* Added role for accessibility */
+            role: navigation;
+        }
+
         header nav ul {
             list-style: none;
             display: flex;
@@ -65,8 +99,10 @@
             transition: color 0.3s ease;
         }
 
-        header nav ul li a:hover {
-            color: #666;
+        header nav ul li a:hover,
+        header nav ul li a.active {
+            color: var(--secondary-color-qrbay); /* Changed hover color for better contrast */
+            border-bottom: 2px solid var(--secondary-color-qrbay);
         }
 
         /* Hero Section with Color-Changing Background */
@@ -140,20 +176,20 @@
 
         .about-content p, .contact-content p, .services-content p {
             font-size: 1.2em;
-            color: #333;
+            color: var(--text-color);
             font-weight: 500;
             margin: 0;
         }
 
         .contact-content a {
-            color: #000;
+            color: var(--text-color);
             font-weight: bold;
             text-decoration: none;
             transition: color 0.3s;
         }
 
         .contact-content a:hover {
-            color: #333;
+            color: var(--secondary-color-qrbay); /* Changed hover color for better contrast */
         }
 
         /* App Cards */
@@ -161,133 +197,437 @@
             display: flex;
             gap: 20px;
             flex-wrap: wrap;
-            justify-content: center;
+            justify-content: space-between; /* Distribute space evenly */
             margin-top: 30px;
         }
 
         .app {
-            background: #fff;
+            background: var(--background-color);
             padding: 25px;
             border-radius: 10px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
             text-align: center;
-            flex: 1;
-            min-width: 250px;
-            max-width: 300px;
-            border-top: 4px solid #000;
+            flex: 1 1 calc(50% - 20px);
+            border-top: 4px solid var(--primary-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-sizing: border-box;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
+        .app:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Specific Styles for QRBay */
+        .app-qrbay {
+            border-top-color: var(--secondary-color-qrbay);
+        }
+
+        .app-qrbay .app-title {
+            color: var(--secondary-color-qrbay);
+        }
+
+        .app-qrbay .app-link {
+            background-color: var(--secondary-color-qrbay);
+            color: #fff;
+        }
+
+        .app-qrbay .app-link:hover {
+            background-color: var(--hover-color-qrbay);
+        }
+
+        /* Specific Styles for MoneyBay */
+        .app-moneybay {
+            border-top-color: var(--secondary-color-moneybay);
+        }
+
+        .app-moneybay .app-title {
+            color: var(--secondary-color-moneybay);
+        }
+
+        .app-moneybay .app-link {
+            background-color: var(--secondary-color-moneybay);
+            color: #fff;
+        }
+
+        .app-moneybay .app-link:hover {
+            background-color: var(--hover-color-moneybay);
+        }
+
+        /* App Title */
         .app-title {
             font-size: 1.8em;
-            color: #000;
+            color: var(--primary-color);
             font-weight: bold;
             margin-bottom: 10px;
         }
 
+        /* App Description */
         .app-description {
             font-size: 1em;
-            color: #555;
+            color: var(--text-color);
             margin: 10px 0;
+            flex-grow: 1;
         }
 
+        /* App Features */
+        .app-features {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        /* Common Styles for App Features */
+        .app-features li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            color: var(--text-color);
+        }
+
+        /* QRBay Features - Checkmark Icon */
+        .app-qrbay .app-features li::before {
+            content: "\f00c"; /* Font Awesome Checkmark */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--secondary-color-qrbay);
+            font-size: var(--icon-size);
+        }
+
+        /* MoneyBay Features - Dollar Sign Icon */
+        .app-moneybay .app-features li::before {
+            content: "\f155"; /* Font Awesome Dollar Sign */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--secondary-color-moneybay);
+            font-size: var(--icon-size);
+        }
+
+        /* App Links */
         .app-link {
             display: inline-block;
             margin-top: 15px;
             font-size: 1.1em;
             font-weight: bold;
             color: #fff;
-            background-color: #000;
+            background-color: var(--primary-color);
             padding: 10px 20px;
             border-radius: 8px;
             text-decoration: none;
             transition: background-color 0.3s;
         }
 
-        .app-link:hover {
-            background-color: #333;
-        }
-
         /* Footer Styles */
         footer {
-            background: #000;
+            background: var(--primary-color);
             color: #fff;
             text-align: center;
             padding: 15px 0;
             font-size: 0.9em;
         }
+
+        footer a {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        /* Contact Us Section Enhancements */
+        .contact {
+            background: #f9f9f9;
+            padding: 80px 20px;
+        }
+
+        .contact-content {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            background: #fff;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 250px;
+            text-align: center;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: color 0.3s;
+        }
+
+        .contact-link i {
+            margin-right: 10px;
+            font-size: 1.5em;
+            color: var(--secondary-color-qrbay); /* Changed icon color for better contrast */
+        }
+
+        .contact-link:hover {
+            color: var(--secondary-color-qrbay); /* Changed hover color for better contrast */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .app {
+                flex: 1 1 100%; /* Full width on tablets and smaller screens */
+            }
+
+            .hero h2 {
+                font-size: 2.5em;
+            }
+
+            .highlight-text {
+                font-size: 1.2em;
+            }
+
+            .app-list {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-content {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .app {
+                padding: 20px; /* Slightly smaller padding for very small screens */
+            }
+
+            header h1 {
+                font-size: 1.5em;
+            }
+
+            header nav ul {
+                gap: 15px;
+                margin-right: 10px;
+            }
+
+            .hero h2 {
+                font-size: 2em;
+            }
+
+            .highlight-text {
+                font-size: 1em;
+            }
+
+            .app {
+                max-width: 100%;
+            }
+
+            .contact-item {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .app-features li {
+                padding-left: 25px;
+            }
+
+            .app-features li::before {
+                left: 0;
+            }
+        }
+
+        /* Skip Link Styles */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--secondary-color-qrbay);
+            color: #fff;
+            padding: 8px 16px;
+            z-index: 100;
+            transition: top 0.3s;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            .hero {
+                animation: none;
+            }
+        }
+
+        /* Focus States for Accessibility */
+        a:focus, button:focus {
+            outline: 2px dashed var(--secondary-color-qrbay);
+            outline-offset: 4px;
+        }
     </style>
 </head>
 <body>
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Header Section -->
     <header>
         <div class="container">
             <h1>Vutas Studio</h1>
-            <nav>
+            <nav aria-label="Main Navigation">
                 <ul>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#services">Sản phẩm</a></li>
+                    <!-- <li><a href="#about">About Us</a></li> -->
+                    <li><a href="#contact">Liên hệ</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h2>Welcome to Vutas Studio</h2>
-            <p class="highlight-text">Innovative iOS Applications to Enhance Your Digital Experience</p>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <h2>Our Services</h2>
-            <div class="services-content">
-                <p>Discover our innovative iOS applications</p>
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h2>Chào mừng đến với Vutas Studio</h2>
+                <p class="highlight-text">Các ứng dụng iOS sáng tạo để nâng cao trải nghiệm kỹ thuật số của bạn</p>
             </div>
-            <div class="app-list">
-                <div class="app">
-                    <h3 class="app-title">Vutas QRBay</h3>
-                    <p class="app-description"><b>Vutas QRBay</b> is a versatile QR code and barcode scanning app, offering features from quick scanning to completely free QR code generation.</p>
-                    <a href="https://apps.apple.com/app/qrbay/id6499323043" target="_blank" class="app-link">Download on App Store</a>
-                    <a href="https://vutas.net/qrbay/" target="_blank" class="app-link">More Info</a>
+        </section>
+
+        <!-- Products Section -->
+        <section id="services" class="services">
+            <div class="container">
+                <h2>Sản phẩm</h2>
+                <div class="app-list">
+                    <div class="app app-qrbay">
+                        <h3 class="app-title">QRBay</h3>
+                        <p class="app-description"><b>Máy quét mã QR • Đầu đọc mã vạch <br/> Tạo mã QR miễn phí </b></p>
+                        <p class="app-description"><b>QRBay</b> là ứng dụng tiện ích mạnh mẽ giúp bạn tạo và quét mã QR nhanh chóng, dễ dàng. Với giao diện đơn giản, QRBay mang đến cho người dùng những tính năng nổi bật như:</p>
+                        <ul class="app-features">
+                            <li>Quét mã QR và mã vạch</li>
+                            <li>Quét mã vạch để xem giá sản phẩm</li>
+                            <li>Quét mã QR từ thư viện ảnh</li>
+                            <li>Tạo mã QR và mã vạch</li>
+                            <li>Quản lý lịch sử của bạn</li>
+                            <li>Tùy chỉnh mã QR</li>
+                            <li>Quét hàng loạt</li>
+                            <li>Xuất dữ liệu sang CSV, văn bản, hoặc hình ảnh</li>
+                        </ul>
+                        <a href="https://apps.apple.com/app/qrbay/id6499323043" target="_blank" rel="noopener noreferrer" class="app-link" aria-label="Download Vutas QRBay on App Store">TẢI APP QRBAY</a>
+                        <a href="https://vutas.net/qrbay/" target="_blank" rel="noopener noreferrer" class="app-link" aria-label="More information about Vutas QRBay">Tìm hiểu thêm</a>
+                    </div>
+                    <div class="app app-moneybay">
+                        <h3 class="app-title">MoneyBay</h3>
+                        <p class="app-description"><b>Sổ Thu Chi - Quản lý tài chính cá nhân</b></p>
+                        <p class="app-description"><b>MoneyBay</b> giúp bạn theo dõi thu nhập và chi tiêu cá nhân một cách đơn giản, nhanh chóng và hiệu quả. Với giao diện thân thiện và dễ sử dụng, bạn sẽ có cái nhìn tổng quan về tài chính của mình chỉ trong vài bước. MoneyBay tự động tạo báo cáo chi tiêu và thu nhập, giúp bạn kiểm soát ngân sách và tối ưu hóa tài chính cá nhân. MoneyBay mang đến cho người dùng những tính năng nổi bật như:</p>
+                        <ul class="app-features">
+                            <li>Dễ sử dụng, giao diện trực quan</li>
+                            <li>Không cần đăng ký tài khoản</li>
+                            <li>Nhập liệu dễ dàng các khoản thu chi chỉ trong vài giây</li>
+                            <li>Tạo báo cáo tài chính chi tiêu hàng tháng, hàng năm và báo cáo tích lũy</li>
+                            <li>Chế độ màu sắc ứng dụng</li>
+                            <li>Sao lưu và xuất dữ liệu CSV</li>
+                            <li>Đồng bộ iCloud</li>
+                        </ul>
+                        <a href="https://apps.apple.com/app/moneybay-expense-manager/id6737480496" target="_blank" rel="noopener noreferrer" class="app-link" aria-label="Download Vutas MoneyBay on App Store">TẢI APP MONEYBAY</a>
+                        <a href="https://vutas.net/moneybay/" target="_blank" rel="noopener noreferrer" class="app-link" aria-label="More information about Vutas MoneyBay">Tìm hiểu thêm</a>
+                    </div>
                 </div>
-                <div class="app">
-                    <h3 class="app-title">Vutas MoneyBay</h3>
-                    <p class="app-description"><b>Vutas MoneyBay: Expense Manager</b> helps track income and expenses efficiently.</p>
-                    <a href="#" target="_blank" class="app-link">Coming Soon</a>
+            </div>
+        </section>
+
+        <!-- Contact Us Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Liên hệ</h2>
+                <div class="contact-content">
+                    <div class="contact-item">
+                        <a href="https://www.facebook.com/moneybayapp" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="MoneyBay App on Facebook">
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                            MoneyBay App
+                        </a>
+                    </div>
+                    <div class="contact-item">
+                        <a href="https://www.facebook.com/qrbayapp" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="QRBay App on Facebook">
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                            QRBay App
+                        </a>
+                    </div>
+                    <div class="contact-item">
+                        <a href="mailto:vutas.studio@gmail.com" class="contact-link" aria-label="Email Vutas Studio">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                            vutas.studio@gmail.com
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- About Us Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About Us</h2>
-            <div class="about-content">
-                <p>Vutas Studio is a team committed to delivering high-quality iOS applications that elevate the user experience.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Us Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <div class="contact-content">
-                <p><strong>Facebook:</strong> <a href="https://www.facebook.com/vutas.studio" target="_blank">fb.com/vutas.studio</a></p>
-                <p><strong>Facebook QRBay:</strong> <a href="https://www.facebook.com/qrbayapp" target="_blank">fb.com/qrbayapp</a></p>
-                <p><strong>Email:</strong> <a href="mailto:vutas.studio@gmail.com">vutas.studio@gmail.com</a></p>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer Section -->
     <footer>
-        &copy; 2024 Vutas Studio - VUTAS.NET
+        &copy; 2024 Vutas Studio - <a href="https://vutas.net" aria-label="Visit VUTAS.NET">VUTAS.NET</a>
     </footer>
+
+    <!-- JavaScript for Smooth Scrolling and Active Navigation (Optional) -->
+    <script>
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Active Navigation Link Highlighting using Intersection Observer
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('header nav ul li a');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.6
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    navLinks.forEach(link => {
+                        link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+                        if (link.getAttribute('href') === `#${id}`) {
+                            link.setAttribute('aria-current', 'page');
+                        } else {
+                            link.removeAttribute('aria-current');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => observer.observe(section));
+    </script>
 </body>
 </html>
