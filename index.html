@@ -121,21 +121,32 @@
     /****************************************
      * 3) Header
      ****************************************/
-     /* Căn chỉnh menu navigation */
+   /* Căn chỉnh menu navigation */
     nav ul {
     list-style: none;
     display: flex;
-    align-items: center;  /* Căn giữa các mục theo chiều dọc */
+    align-items: center;  /* Căn giữa theo chiều dọc */
     gap: 20px;  /* Khoảng cách giữa các mục */
     margin-right: 20px;
     padding: 0;
     }
 
-    /* Định dạng chung cho menu */
-nav ul li {
-  display: flex;
-  align-items: center;
-}
+        /* Định dạng chung cho menu */
+    nav ul li {
+    display: flex;
+    align-items: center;
+    }
+
+    /* Link "Tải về" */
+    nav ul li a {
+    font-weight: 600;
+    color: var(--header-text);
+    transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+    color: var(--secondary-qrbay);
+    }
 
     header {
       background: var(--header-bg);
@@ -176,20 +187,20 @@ nav ul li {
     }
 
     /* Nút Dark Mode Toggle */
-        .dark-mode-toggle {
-    background: none;
-    border: 2px solid var(--header-text);
-    color: var(--header-text);
-    font-size: 0.9rem;
-    padding: 6px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease, color 0.3s ease;
+    .dark-mode-toggle {
+        background: none;
+        border: 2px solid var(--header-text);
+        color: var(--header-text);
+        font-size: 0.9rem;
+        padding: 6px 12px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s ease, color 0.3s ease;
     }
 
     .dark-mode-toggle:hover {
-    background: var(--header-text);
-    color: var(--primary-bg);
+        background: var(--header-text);
+        color: var(--primary-bg);
     }
 
     /****************************************
@@ -519,17 +530,19 @@ nav ul li {
       <nav aria-label="Main Navigation">
         <ul>
           <li><a href="#services">Sản phẩm</a></li>
+          <li><a href="https://vutas.net/download/" target="_blank" rel="noopener noreferrer">Tải về</a></li>
           <li><a href="#contact">Liên hệ</a></li>
           <li>
             <!-- Nút Dark Mode -->
             <button type="button" class="dark-mode-toggle" id="darkModeToggle">
-              <i class="fas fa-moon"></i> Chế độ tối
+              <i class="fas fa-moon"></i> Dark Mode
             </button>
           </li>
         </ul>
       </nav>
     </div>
   </header>
+  
   
   <!-- Main Content -->
   <main id="main-content">
