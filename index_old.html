@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vutas Studio | iOS Apps - Vutas QRBay & MoneyBay</title>
+
+  <!-- Meta hỗ trợ SEO -->
+  <meta name="description" content="Tải ngay các ứng dụng hữu ích từ Vutas Studio: Quét mã QRBay, Sổ Thu Chi MoneyBay. Hỗ trợ quản lý tài chính cá nhân và quét mã QR nhanh chóng.">
+  <meta name="keywords" content="tải app, tải ứng dụng, ứng dụng quản lý tài chính, sổ thu chi cá nhân, theo dõi chi tiêu, quét mã QR, scan QR code, MoneyBay, QRBay, Vutas Studio, phần mềm quản lý tiền, ứng dụng theo dõi thu chi, app tài chính cá nhân, ví điện tử, ghi chép thu chi, quản lý ngân sách, ứng dụng quét mã QR, quản lý chi tiêu, quản lý hóa đơn, tiết kiệm tiền, thu chi gia đình, sổ thu chi miễn phí, theo dõi thu nhập, app chi tiêu cá nhân, phần mềm tài chính, theo dõi dòng tiền, lập kế hoạch tài chính, đầu tư cá nhân, ứng dụng quét mã QR miễn phí, tải app tài chính, tải app quét mã QR, quét QR nhanh, hỗ trợ tài chính cá nhân, ứng dụng tài chính tốt nhất, sổ chi tiêu thông minh, tính toán chi tiêu, quản lý tài chính thông minh, phân tích thu chi, MoneyBay tải xuống, QRBay tải xuống, app tốt nhất cho quản lý tài chính, ứng dụng ghi chép thu chi miễn phí, tài chính cá nhân 2025">
+  <meta name="author" content="Vutas Studio">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Tải App QRBay & MoneyBay - Vutas Studio">
+  <meta property="og:description" content="Tải ngay ứng dụng QRBay để quét mã nhanh chóng & MoneyBay để quản lý tài chính cá nhân hiệu quả.">
+  <meta property="og:image" content="https://vutas.net/logo.png">
+  <meta property="og:url" content="https://vutas.net">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tải App QRBay & MoneyBay - Vutas Studio">
+  <meta name="twitter:description" content="Ứng dụng hỗ trợ quét mã QR và quản lý tài chính cá nhân tốt nhất từ Vutas Studio.">
+  <meta name="twitter:image" content="https://vutas.net/logo.png">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome (CDN) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-pO3XGIrAWu+Bvd7l+KcXy1h+X+gZl5h3e3g0t1NqKoxWgfOfVZs5EDEbB3X1QDjO7k4P6qdWQo72HAX6cxA4Q=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.ico" />
+
+  <style>
+    /****************************************
+     * 1) CSS Variables (Light / Dark Mode)
+     ****************************************/
+    :root {
+      /* Light Mode (mặc định) */
+      --primary-bg: #000;            /* Header & Footer mặc định */
+      --secondary-qrbay: #ff6b35;    /* Màu chủ đạo QRBay (Cam) */
+      --secondary-moneybay: #33a1fd; /* Màu chủ đạo MoneyBay (Xanh) */
+      --bg-color: #fff;             /* Nền trang */
+      --text-color: #333;           /* Màu chữ chính */
+
+      --font-heading: 'Montserrat', sans-serif;
+      --font-body: 'Open Sans', sans-serif;
+
+      /* Màu cho link/các hover */
+      --hover-qrbay: #e65c2f;
+      --hover-moneybay: #2a8bd8;
+
+      /* Header/Footer */
+      --header-bg: var(--primary-bg);
+      --header-text: #fff;
+      --footer-bg: var(--primary-bg);
+      --footer-text: #fff;
+
+      /* Card */
+      --card-bg: #fff;
+      --card-text: #333;
+      --card-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+
+      /* CTA Link */
+      --cta-bg-qrbay: var(--secondary-qrbay);
+      --cta-bg-moneybay: var(--secondary-moneybay);
+
+      /* CTA Link hover */
+      --cta-bg-qrbay-hover: var(--hover-qrbay);
+      --cta-bg-moneybay-hover: var(--hover-moneybay);
+    }
+
+    /* Dark Mode */
+    body.dark-mode {
+      --primary-bg: #222;
+      --bg-color: #121212;
+      --text-color: #ddd;
+
+      --header-bg: #222;
+      --header-text: #eee;
+      --footer-bg: #222;
+      --footer-text: #eee;
+
+      --card-bg: #1e1e1e;
+      --card-text: #ccc;
+      --card-shadow: 0 6px 12px rgba(255, 255, 255, 0.07);
+    }
+
+    /****************************************
+     * 2) Reset & Thiết lập cơ bản
+     ****************************************/
+    * {
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box;
+    }
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+    }
+    a {
+      text-decoration: none;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /****************************************
+     * 3) Header
+     ****************************************/
+   /* Căn chỉnh menu navigation */
+    nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;  /* Căn giữa theo chiều dọc */
+    gap: 20px;  /* Khoảng cách giữa các mục */
+    margin-right: 20px;
+    padding: 0;
+    }
+
+        /* Định dạng chung cho menu */
+    nav ul li {
+    display: flex;
+    align-items: center;
+    }
+
+    /* Link "Tải về" */
+    nav ul li a {
+    font-weight: 600;
+    color: var(--header-text);
+    transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+    color: var(--secondary-qrbay);
+    }
+
+    header {
+      background: var(--header-bg);
+      color: var(--header-text);
+      padding: 15px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: background 0.3s;
+    }
+    header h1 {
+      font-size: 2em;
+      font-weight: bold;
+      margin-left: 20px;
+    }
+    header nav {
+      role: navigation;
+    }
+    header nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin-right: 20px;
+    }
+    header nav ul li a {
+      color: var(--header-text);
+      font-weight: 600;
+      padding: 5px;
+      transition: color 0.3s ease, border-bottom 0.3s ease;
+    }
+    header nav ul li a:hover,
+    header nav ul li a.active {
+      color: var(--secondary-qrbay);
+      border-bottom: 2px solid var(--secondary-qrbay);
+    }
+
+    /* Nút Dark Mode Toggle */
+    .dark-mode-toggle {
+        background: none;
+        border: 2px solid var(--header-text);
+        color: var(--header-text);
+        font-size: 0.9rem;
+        padding: 6px 12px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .dark-mode-toggle:hover {
+        background: var(--header-text);
+        color: var(--primary-bg);
+    }
+
+    /****************************************
+     * 4) Hero (Gradient Animation)
+     ****************************************/
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      color: #fff; 
+      background: linear-gradient(270deg, #ff6b35, #ff9d5a, #8a2be2, #33a1fd, #00c4b4, #ff007f);
+      background-size: 1200% 1200%;
+      animation: colorShift 12s ease-in-out infinite;
+    }
+    @keyframes colorShift {
+      0% { background-position: 0% 50%; }
+      25% { background-position: 50% 50%; }
+      50% { background-position: 100% 50%; }
+      75% { background-position: 50% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .hero h2 {
+      font-size: 3.5em;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .highlight-text {
+      font-size: 1.5em;
+      font-weight: 600;
+      background: #000;
+      padding: 10px 20px;
+      border-radius: 8px;
+      margin-top: 15px;
+      display: inline-block;
+      color: #fff;
+      transition: transform 0.2s ease-in-out, background 0.3s ease;
+    }
+    .highlight-text:hover {
+      transform: scale(1.05);
+      background: #333;
+    }
+
+    /****************************************
+     * 5) Section Cơ bản (About / Contact / Services)
+     ****************************************/
+    section {
+      padding: 60px 20px;
+    }
+    #about, #contact, #services {
+      background: #f1f1f1;
+      padding: 80px 20px;
+    }
+    body.dark-mode #about,
+    body.dark-mode #contact,
+    body.dark-mode #services {
+      background: #1a1a1a;
+    }
+    #about h2, #contact h2, #services h2 {
+      font-size: 2.5em;
+      text-align: center;
+      margin-bottom: 20px;
+      color: #000; /* Màu chữ Light Mode */
+    }
+    body.dark-mode #about h2,
+    body.dark-mode #contact h2,
+    body.dark-mode #services h2 {
+      color: #fff; /* Dark Mode */
+    }
+
+    /****************************************
+     * 6) Danh sách Ứng dụng (App Cards)
+     ****************************************/
+    .app-list {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: 30px;
+    }
+    .app {
+      background: var(--card-bg);
+      color: var(--card-text);
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: var(--card-shadow);
+      text-align: center;
+      flex: 1 1 calc(50% - 20px);
+      border-top: 4px solid var(--primary-bg);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .app:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    }
+    /* QRBay Card */
+    .app-qrbay {
+      border-top-color: var(--secondary-qrbay);
+    }
+    .app-qrbay .app-title {
+      color: var(--secondary-qrbay);
+    }
+    .app-qrbay .app-link {
+      background-color: var(--cta-bg-qrbay);
+    }
+    .app-qrbay .app-link:hover {
+      background-color: var(--cta-bg-qrbay-hover);
+    }
+    /* MoneyBay Card */
+    .app-moneybay {
+      border-top-color: var(--secondary-moneybay);
+    }
+    .app-moneybay .app-title {
+      color: var(--secondary-moneybay);
+    }
+    .app-moneybay .app-link {
+      background-color: var(--cta-bg-moneybay);
+    }
+    .app-moneybay .app-link:hover {
+      background-color: var(--cta-bg-moneybay-hover);
+    }
+    /* App Title */
+    .app-title {
+      font-size: 1.8em;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    /* App Description */
+    .app-description {
+      font-size: 1em;
+      margin: 10px 0;
+      flex-grow: 1;
+    }
+    /* App Features */
+    .app-features {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+      text-align: left;
+    }
+    .app-features li {
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 15px;
+      font-size: 1.1em;
+    }
+    /* Icons cho QRBay */
+    .app-qrbay .app-features li::before {
+      content: "\f00c"; /* Font Awesome check */
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--secondary-qrbay);
+    }
+    /* Icons cho MoneyBay */
+    .app-moneybay .app-features li::before {
+      content: "\f155"; /* Font Awesome dollar sign */
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--secondary-moneybay);
+    }
+    /* App Link */
+    .app-link {
+      display: inline-block;
+      margin-top: 15px;
+      margin-right: 8px;
+      margin-bottom: 8px;
+      font-size: 1.05em;
+      font-weight: 600;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    /****************************************
+     * 7) Contact Section
+     ****************************************/
+    .contact {
+      background: #f9f9f9;
+      padding: 80px 20px;
+    }
+    body.dark-mode .contact {
+      background: #1a1a1a;
+    }
+    .contact-content {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .contact-item {
+      background: #fff;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      width: 250px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    body.dark-mode .contact-item {
+      background: #2a2a2a;
+      box-shadow: 0 6px 12px rgba(255, 255, 255, 0.06);
+    }
+    .contact-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    }
+    .contact-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-color);
+      text-decoration: none;
+      font-size: 1.1em;
+      transition: color 0.3s;
+    }
+    .contact-link i {
+      margin-right: 10px;
+      font-size: 1.5em;
+      color: var(--secondary-qrbay);
+    }
+    .contact-link:hover {
+      color: var(--secondary-qrbay);
+    }
+
+    /****************************************
+     * 8) Footer
+     ****************************************/
+    footer {
+      background: var(--footer-bg);
+      color: var(--footer-text);
+      text-align: center;
+      padding: 15px 0;
+      font-size: 0.9em;
+      transition: background 0.3s;
+    }
+    footer a {
+      color: var(--footer-text);
+      text-decoration: underline;
+    }
+
+    /****************************************
+     * 9) Responsive
+     ****************************************/
+    @media (max-width: 768px) {
+      .app {
+        flex: 1 1 100%;
+      }
+      .hero h2 {
+        font-size: 2.5em;
+      }
+      .highlight-text {
+        font-size: 1.2em;
+      }
+      .contact-content {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+    @media (max-width: 480px) {
+      .app {
+        padding: 20px;
+      }
+      header h1 {
+        font-size: 1.5em;
+      }
+      header nav ul {
+        gap: 15px;
+      }
+      .hero h2 {
+        font-size: 2em;
+      }
+      .highlight-text {
+        font-size: 1em;
+      }
+      .contact-item {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+
+    /****************************************
+     * 10) Skip Link & Accessibility
+     ****************************************/
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--secondary-qrbay);
+      color: #fff;
+      padding: 8px 16px;
+      z-index: 100;
+      transition: top 0.3s;
+    }
+    .skip-link:focus {
+      top: 0;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero {
+        animation: none;
+      }
+    }
+    a:focus, button:focus {
+      outline: 2px dashed var(--secondary-qrbay);
+      outline-offset: 4px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Skip Link for Accessibility -->
+  <a href="#main-content" class="skip-link">Bỏ qua nội dung khác, đi đến phần chính</a>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <h1>Vutas Studio</h1>
+      <nav aria-label="Main Navigation">
+        <ul>
+          <li><a href="#services">Sản phẩm</a></li>
+          <li><a href="https://vutas.net/download/" target="_blank" rel="noopener noreferrer">Tải Ứng Dụng</a></li>
+          <li><a href="#contact">Liên hệ</a></li>
+          <li>
+            <!-- Nút Dark Mode -->
+            <button type="button" class="dark-mode-toggle" id="darkModeToggle">
+              <i class="fas fa-moon"></i> Dark Mode
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h2>Chào mừng đến với Vutas Studio</h2>
+        <p class="highlight-text">
+          Các ứng dụng iOS sáng tạo, nâng tầm trải nghiệm số của bạn
+        </p>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="services" class="services">
+      <div class="container">
+        <h2>Sản phẩm</h2>
+        <div class="app-list">
+            <!-- MoneyBay Card -->
+          <div class="app app-moneybay">
+            <h3 class="app-title">MoneyBay</h3>
+            <p class="app-description"><b>Sổ Thu Chi - Quản lý chi tiêu cá nhân</b></p>
+            <p class="app-description">
+              <b>MoneyBay</b> giúp bạn theo dõi thu nhập & chi tiêu dễ dàng. Báo cáo chi tiêu, thống kê hàng tháng, không cần đăng ký.
+            </p>
+            <ul class="app-features">
+              <li>Nhập liệu thu chi nhanh</li>
+              <li>Không cần tài khoản</li>
+              <li>Báo cáo chi tiêu rõ ràng</li>
+              <li>Sao lưu, xuất CSV, đồng bộ iCloud</li>
+            </ul>
+            <a href="https://tinyurl.com/moneybay" target="_blank" rel="noopener noreferrer"
+               class="app-link" aria-label="Download Vutas MoneyBay on App Store">TẢI APP MONEYBAY</a>
+            <a href="https://vutas.net/moneybay/" target="_blank" rel="noopener noreferrer"
+               class="app-link" aria-label="More info about Vutas MoneyBay">Tìm hiểu thêm</a>
+          </div>
+
+          <!-- QRBay Card -->
+          <div class="app app-qrbay">
+            <h3 class="app-title">QRBay</h3>
+            <p class="app-description">
+              <b>Máy quét mã QR • Đầu đọc mã vạch<br/>Tạo mã QR miễn phí</b>
+            </p>
+            <p class="app-description">
+              <b>QRBay</b> là ứng dụng quét mã QR & mã vạch mạnh mẽ, hỗ trợ tạo mã QR nhanh chóng. Giao diện đơn giản, dễ dùng.
+            </p>
+            <ul class="app-features">
+              <li>Quét mã QR và mã vạch nhanh</li>
+              <li>Quản lý lịch sử quét</li>
+              <li>Tạo mã QR & mã vạch riêng</li>
+              <li>Quét hàng loạt, xuất CSV</li>
+            </ul>
+            <a href="https://tinyurl.com/qrbay" target="_blank" rel="noopener noreferrer"
+               class="app-link" aria-label="Download Vutas QRBay on App Store">TẢI APP QRBAY</a>
+            <a href="https://vutas.net/qrbay/" target="_blank" rel="noopener noreferrer"
+               class="app-link" aria-label="More info about Vutas QRBay">Tìm hiểu thêm</a>
+          </div>
+
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2>Kết nối cùng chúng tôi</h2>
+        <div class="contact-content">
+          <div class="contact-item">
+            <a href="https://www.facebook.com/moneybayapp" target="_blank" rel="noopener noreferrer"
+               class="contact-link" aria-label="MoneyBay App on Facebook">
+              <i class="fab fa-facebook-f" aria-hidden="true"></i>
+              Theo dõi MoneyBay
+            </a>
+          </div>
+          <div class="contact-item">
+            <a href="https://www.facebook.com/qrbayapp" target="_blank" rel="noopener noreferrer"
+               class="contact-link" aria-label="QRBay App on Facebook">
+              <i class="fab fa-facebook-f" aria-hidden="true"></i>
+              Theo dõi QRBay
+            </a>
+          </div>
+          <div class="contact-item">
+            <a href="mailto:contact@vutas.net" class="contact-link" aria-label="Email Vutas Studio">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              Email: contact@vutas.net
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    &copy; <span id="year"></span> Vutas Studio &mdash; 
+    <a href="https://vutas.net" aria-label="Visit Vutas.net">VUTAS.NET</a>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    // Cập nhật năm động
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Smooth Scrolling (Optional)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        // Chỉ áp dụng smooth scroll cho anchor cùng trang (#id)
+        if (href.startsWith('#')) {
+          e.preventDefault();
+          document.querySelector(href).scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Intersection Observer để highlight link menu
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('header nav ul li a');
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.6
+    };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          navLinks.forEach(link => {
+            link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+            if (link.getAttribute('href') === `#${id}`) {
+              link.setAttribute('aria-current', 'page');
+            } else {
+              link.removeAttribute('aria-current');
+            }
+          });
+        }
+      });
+    }, observerOptions);
+    sections.forEach(section => observer.observe(section));
+
+    // Dark Mode Toggle
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    darkModeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+  </script>
+</body>
+</html>

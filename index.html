@@ -1,696 +1,391 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vutas Studio | iOS Apps - Vutas QRBay & MoneyBay</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Meta hỗ trợ SEO -->
-  <meta name="description" content="Tải ngay các ứng dụng hữu ích từ Vutas Studio: Quét mã QRBay, Sổ Thu Chi MoneyBay. Hỗ trợ quản lý tài chính cá nhân và quét mã QR nhanh chóng.">
-  <meta name="keywords" content="tải app, tải ứng dụng, ứng dụng quản lý tài chính, sổ thu chi cá nhân, theo dõi chi tiêu, quét mã QR, scan QR code, MoneyBay, QRBay, Vutas Studio, phần mềm quản lý tiền, ứng dụng theo dõi thu chi, app tài chính cá nhân, ví điện tử, ghi chép thu chi, quản lý ngân sách, ứng dụng quét mã QR, quản lý chi tiêu, quản lý hóa đơn, tiết kiệm tiền, thu chi gia đình, sổ thu chi miễn phí, theo dõi thu nhập, app chi tiêu cá nhân, phần mềm tài chính, theo dõi dòng tiền, lập kế hoạch tài chính, đầu tư cá nhân, ứng dụng quét mã QR miễn phí, tải app tài chính, tải app quét mã QR, quét QR nhanh, hỗ trợ tài chính cá nhân, ứng dụng tài chính tốt nhất, sổ chi tiêu thông minh, tính toán chi tiêu, quản lý tài chính thông minh, phân tích thu chi, MoneyBay tải xuống, QRBay tải xuống, app tốt nhất cho quản lý tài chính, ứng dụng ghi chép thu chi miễn phí, tài chính cá nhân 2025">
-  <meta name="author" content="Vutas Studio">
-  <meta name="robots" content="index, follow">
-  <meta property="og:title" content="Tải App QRBay & MoneyBay - Vutas Studio">
-  <meta property="og:description" content="Tải ngay ứng dụng QRBay để quét mã nhanh chóng & MoneyBay để quản lý tài chính cá nhân hiệu quả.">
-  <meta property="og:image" content="https://vutas.net/logo.png">
-  <meta property="og:url" content="https://vutas.net">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Tải App QRBay & MoneyBay - Vutas Studio">
-  <meta name="twitter:description" content="Ứng dụng hỗ trợ quét mã QR và quản lý tài chính cá nhân tốt nhất từ Vutas Studio.">
-  <meta name="twitter:image" content="https://vutas.net/logo.png">
+    <title data-lang-key="pageTitle">Vutas Studio | Ứng dụng iOS - QRBay & MoneyBay</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <meta name="description" content="Tải ngay các ứng dụng hữu ích từ Vutas Studio: Quét mã QRBay, Sổ Thu Chi MoneyBay. Hỗ trợ quản lý tài chính cá nhân và quét mã QR nhanh chóng." data-lang-key="metaDescription">
+    <meta name="keywords" content="tải app, tải ứng dụng, ứng dụng quản lý tài chính, sổ thu chi cá nhân, theo dõi chi tiêu, quét mã QR, scan QR code, MoneyBay, QRBay, Vutas Studio, phần mềm quản lý tiền, ứng dụng theo dõi thu chi, app tài chính cá nhân, ví điện tử, ghi chép thu chi, quản lý ngân sách, ứng dụng quét mã QR, quản lý chi tiêu, quản lý hóa đơn, tiết kiệm tiền, thu chi gia đình, sổ thu chi miễn phí, theo dõi thu nhập, app chi tiêu cá nhân, phần mềm tài chính, theo dõi dòng tiền, lập kế hoạch tài chính, đầu tư cá nhân, ứng dụng quét mã QR miễn phí, tải app tài chính, tải app quét mã QR, quét QR nhanh, hỗ trợ tài chính cá nhân, ứng dụng tài chính tốt nhất, sổ chi tiêu thông minh, tính toán chi tiêu, quản lý tài chính thông minh, phân tích thu chi, MoneyBay tải xuống, QRBay tải xuống, app tốt nhất cho quản lý tài chính, ứng dụng ghi chép thu chi miễn phí, tài chính cá nhân 2025">
+    <meta name="author" content="Vutas Studio">
+    <meta name="robots" content="index, follow">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Font Awesome (CDN) -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-pO3XGIrAWu+Bvd7l+KcXy1h+X+gZl5h3e3g0t1NqKoxWgfOfVZs5EDEbB3X1QDjO7k4P6qdWQo72HAX6cxA4Q=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="icon" href="https://vutas.net/assets/favicon.ico" />
 
-  <!-- Favicon -->
-  <link rel="icon" href="assets/favicon.ico" />
+    <script>
+        if (localStorage.getItem('vutas-theme') === 'dark' || (!('vutas-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
 
-  <style>
-    /****************************************
-     * 1) CSS Variables (Light / Dark Mode)
-     ****************************************/
-    :root {
-      /* Light Mode (mặc định) */
-      --primary-bg: #000;            /* Header & Footer mặc định */
-      --secondary-qrbay: #ff6b35;    /* Màu chủ đạo QRBay (Cam) */
-      --secondary-moneybay: #33a1fd; /* Màu chủ đạo MoneyBay (Xanh) */
-      --bg-color: #fff;             /* Nền trang */
-      --text-color: #333;           /* Màu chữ chính */
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
 
-      --font-heading: 'Montserrat', sans-serif;
-      --font-body: 'Open Sans', sans-serif;
+        /* --- Aurora Background Effect --- */
+        .aurora-bg {
+            position: relative;
+            overflow: hidden;
+            background-color: #f0f4f8; /* Light mode fallback */
+        }
+        .dark .aurora-bg {
+             background-color: #0d1117; /* Dark mode fallback */
+        }
+        .aurora-bg::before,
+        .aurora-bg::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 120vw;
+            height: 120vw;
+            border-radius: 50%;
+            opacity: 0.15;
+            filter: blur(100px);
+            will-change: transform;
+            z-index: 0;
+            animation: rotate 20s linear infinite;
+        }
+        .aurora-bg::before {
+            background: radial-gradient(circle, #33a1fd, transparent 60%);
+            transform-origin: 20% 40%;
+        }
+        .aurora-bg::after {
+            background: radial-gradient(circle, #ff6b35, transparent 60%);
+            transform-origin: 80% 60%;
+            animation-delay: -10s;
+        }
 
-      /* Màu cho link/các hover */
-      --hover-qrbay: #e65c2f;
-      --hover-moneybay: #2a8bd8;
+        @keyframes rotate {
+            from { transform: rotate(0deg) scale(1); }
+            to { transform: rotate(360deg) scale(1.1); }
+        }
 
-      /* Header/Footer */
-      --header-bg: var(--primary-bg);
-      --header-text: #fff;
-      --footer-bg: var(--primary-bg);
-      --footer-text: #fff;
+        /* ===== Animated Gradient Text Effect ===== */
+        .animated-gradient-text {
+            display: inline-block;
+            background-image: linear-gradient(
+                -60deg, 
+                #ff6b35, 
+                #ff007f, 
+                #8a2be2, 
+                #33a1fd
+            );
+            background-size: 300% 300%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: gradient-flow 8s ease-in-out infinite;
+            transition: transform 0.3s ease, text-shadow 0.3s ease;
+            text-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        .animated-gradient-text:hover {
+            transform: scale(1.03);
+            text-shadow: 0 0 30px rgba(255,107,53,0.3), 0 0 45px rgba(51,161,253,0.3);
+        }
+        @keyframes gradient-flow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* --- Subtle Dot Pattern for Dark Mode --- */
+        .section-bg {
+            position: relative;
+        }
+        .dark .section-bg::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.5;
+            z-index: 0;
+        }
 
-      /* Card */
-      --card-bg: #fff;
-      --card-text: #333;
-      --card-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        /* --- Glowing Card Effect --- */
+        .app-card {
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .app-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border-radius: 0.75rem; /* 12px */
+            border: 1px solid transparent;
+            background: linear-gradient(to bottom, var(--glow-color), transparent) border-box;
+            -webkit-mask: 
+                linear-gradient(#fff 0 0) content-box, 
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: destination-out;
+            mask-composite: exclude;
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .app-card:hover::before {
+            opacity: 0.5;
+        }
+        .app-card-moneybay { --glow-color: #33a1fd; }
+        .app-card-qrbay { --glow-color: #ff6b35; }
 
-      /* CTA Link */
-      --cta-bg-qrbay: var(--secondary-qrbay);
-      --cta-bg-moneybay: var(--secondary-moneybay);
-
-      /* CTA Link hover */
-      --cta-bg-qrbay-hover: var(--hover-qrbay);
-      --cta-bg-moneybay-hover: var(--hover-moneybay);
-    }
-
-    /* Dark Mode */
-    body.dark-mode {
-      --primary-bg: #222;
-      --bg-color: #121212;
-      --text-color: #ddd;
-
-      --header-bg: #222;
-      --header-text: #eee;
-      --footer-bg: #222;
-      --footer-text: #eee;
-
-      --card-bg: #1e1e1e;
-      --card-text: #ccc;
-      --card-shadow: 0 6px 12px rgba(255, 255, 255, 0.07);
-    }
-
-    /****************************************
-     * 2) Reset & Thiết lập cơ bản
-     ****************************************/
-    * {
-      margin: 0; 
-      padding: 0; 
-      box-sizing: border-box;
-    }
-    body {
-      font-family: var(--font-body);
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      line-height: 1.6;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-    h1, h2, h3, h4, h5, h6 {
-      font-family: var(--font-heading);
-    }
-    a {
-      text-decoration: none;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    /****************************************
-     * 3) Header
-     ****************************************/
-   /* Căn chỉnh menu navigation */
-    nav ul {
-    list-style: none;
-    display: flex;
-    align-items: center;  /* Căn giữa theo chiều dọc */
-    gap: 20px;  /* Khoảng cách giữa các mục */
-    margin-right: 20px;
-    padding: 0;
-    }
-
-        /* Định dạng chung cho menu */
-    nav ul li {
-    display: flex;
-    align-items: center;
-    }
-
-    /* Link "Tải về" */
-    nav ul li a {
-    font-weight: 600;
-    color: var(--header-text);
-    transition: color 0.3s ease;
-    }
-
-    nav ul li a:hover {
-    color: var(--secondary-qrbay);
-    }
-
-    header {
-      background: var(--header-bg);
-      color: var(--header-text);
-      padding: 15px 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      transition: background 0.3s;
-    }
-    header h1 {
-      font-size: 2em;
-      font-weight: bold;
-      margin-left: 20px;
-    }
-    header nav {
-      role: navigation;
-    }
-    header nav ul {
-      list-style: none;
-      display: flex;
-      gap: 25px;
-      margin-right: 20px;
-    }
-    header nav ul li a {
-      color: var(--header-text);
-      font-weight: 600;
-      padding: 5px;
-      transition: color 0.3s ease, border-bottom 0.3s ease;
-    }
-    header nav ul li a:hover,
-    header nav ul li a.active {
-      color: var(--secondary-qrbay);
-      border-bottom: 2px solid var(--secondary-qrbay);
-    }
-
-    /* Nút Dark Mode Toggle */
-    .dark-mode-toggle {
-        background: none;
-        border: 2px solid var(--header-text);
-        color: var(--header-text);
-        font-size: 0.9rem;
-        padding: 6px 12px;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background 0.3s ease, color 0.3s ease;
-    }
-
-    .dark-mode-toggle:hover {
-        background: var(--header-text);
-        color: var(--primary-bg);
-    }
-
-    /****************************************
-     * 4) Hero (Gradient Animation)
-     ****************************************/
-    .hero {
-      text-align: center;
-      padding: 100px 20px;
-      color: #fff; 
-      background: linear-gradient(270deg, #ff6b35, #ff9d5a, #8a2be2, #33a1fd, #00c4b4, #ff007f);
-      background-size: 1200% 1200%;
-      animation: colorShift 12s ease-in-out infinite;
-    }
-    @keyframes colorShift {
-      0% { background-position: 0% 50%; }
-      25% { background-position: 50% 50%; }
-      50% { background-position: 100% 50%; }
-      75% { background-position: 50% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-    .hero h2 {
-      font-size: 3.5em;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-    .highlight-text {
-      font-size: 1.5em;
-      font-weight: 600;
-      background: #000;
-      padding: 10px 20px;
-      border-radius: 8px;
-      margin-top: 15px;
-      display: inline-block;
-      color: #fff;
-      transition: transform 0.2s ease-in-out, background 0.3s ease;
-    }
-    .highlight-text:hover {
-      transform: scale(1.05);
-      background: #333;
-    }
-
-    /****************************************
-     * 5) Section Cơ bản (About / Contact / Services)
-     ****************************************/
-    section {
-      padding: 60px 20px;
-    }
-    #about, #contact, #services {
-      background: #f1f1f1;
-      padding: 80px 20px;
-    }
-    body.dark-mode #about,
-    body.dark-mode #contact,
-    body.dark-mode #services {
-      background: #1a1a1a;
-    }
-    #about h2, #contact h2, #services h2 {
-      font-size: 2.5em;
-      text-align: center;
-      margin-bottom: 20px;
-      color: #000; /* Màu chữ Light Mode */
-    }
-    body.dark-mode #about h2,
-    body.dark-mode #contact h2,
-    body.dark-mode #services h2 {
-      color: #fff; /* Dark Mode */
-    }
-
-    /****************************************
-     * 6) Danh sách Ứng dụng (App Cards)
-     ****************************************/
-    .app-list {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      margin-top: 30px;
-    }
-    .app {
-      background: var(--card-bg);
-      color: var(--card-text);
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: var(--card-shadow);
-      text-align: center;
-      flex: 1 1 calc(50% - 20px);
-      border-top: 4px solid var(--primary-bg);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .app:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-    }
-    /* QRBay Card */
-    .app-qrbay {
-      border-top-color: var(--secondary-qrbay);
-    }
-    .app-qrbay .app-title {
-      color: var(--secondary-qrbay);
-    }
-    .app-qrbay .app-link {
-      background-color: var(--cta-bg-qrbay);
-    }
-    .app-qrbay .app-link:hover {
-      background-color: var(--cta-bg-qrbay-hover);
-    }
-    /* MoneyBay Card */
-    .app-moneybay {
-      border-top-color: var(--secondary-moneybay);
-    }
-    .app-moneybay .app-title {
-      color: var(--secondary-moneybay);
-    }
-    .app-moneybay .app-link {
-      background-color: var(--cta-bg-moneybay);
-    }
-    .app-moneybay .app-link:hover {
-      background-color: var(--cta-bg-moneybay-hover);
-    }
-    /* App Title */
-    .app-title {
-      font-size: 1.8em;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-    /* App Description */
-    .app-description {
-      font-size: 1em;
-      margin: 10px 0;
-      flex-grow: 1;
-    }
-    /* App Features */
-    .app-features {
-      list-style: none;
-      padding: 0;
-      margin: 20px 0;
-      text-align: left;
-    }
-    .app-features li {
-      position: relative;
-      padding-left: 30px;
-      margin-bottom: 15px;
-      font-size: 1.1em;
-    }
-    /* Icons cho QRBay */
-    .app-qrbay .app-features li::before {
-      content: "\f00c"; /* Font Awesome check */
-      font-family: "Font Awesome 6 Free";
-      font-weight: 900;
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--secondary-qrbay);
-    }
-    /* Icons cho MoneyBay */
-    .app-moneybay .app-features li::before {
-      content: "\f155"; /* Font Awesome dollar sign */
-      font-family: "Font Awesome 6 Free";
-      font-weight: 900;
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--secondary-moneybay);
-    }
-    /* App Link */
-    .app-link {
-      display: inline-block;
-      margin-top: 15px;
-      margin-right: 8px;
-      margin-bottom: 8px;
-      font-size: 1.05em;
-      font-weight: 600;
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: background-color 0.3s;
-    }
-
-    /****************************************
-     * 7) Contact Section
-     ****************************************/
-    .contact {
-      background: #f9f9f9;
-      padding: 80px 20px;
-    }
-    body.dark-mode .contact {
-      background: #1a1a1a;
-    }
-    .contact-content {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      flex-wrap: wrap;
-    }
-    .contact-item {
-      background: #fff;
-      padding: 20px 30px;
-      border-radius: 10px;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-      width: 250px;
-      text-align: center;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    body.dark-mode .contact-item {
-      background: #2a2a2a;
-      box-shadow: 0 6px 12px rgba(255, 255, 255, 0.06);
-    }
-    .contact-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-    }
-    .contact-link {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-color);
-      text-decoration: none;
-      font-size: 1.1em;
-      transition: color 0.3s;
-    }
-    .contact-link i {
-      margin-right: 10px;
-      font-size: 1.5em;
-      color: var(--secondary-qrbay);
-    }
-    .contact-link:hover {
-      color: var(--secondary-qrbay);
-    }
-
-    /****************************************
-     * 8) Footer
-     ****************************************/
-    footer {
-      background: var(--footer-bg);
-      color: var(--footer-text);
-      text-align: center;
-      padding: 15px 0;
-      font-size: 0.9em;
-      transition: background 0.3s;
-    }
-    footer a {
-      color: var(--footer-text);
-      text-decoration: underline;
-    }
-
-    /****************************************
-     * 9) Responsive
-     ****************************************/
-    @media (max-width: 768px) {
-      .app {
-        flex: 1 1 100%;
-      }
-      .hero h2 {
-        font-size: 2.5em;
-      }
-      .highlight-text {
-        font-size: 1.2em;
-      }
-      .contact-content {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-    @media (max-width: 480px) {
-      .app {
-        padding: 20px;
-      }
-      header h1 {
-        font-size: 1.5em;
-      }
-      header nav ul {
-        gap: 15px;
-      }
-      .hero h2 {
-        font-size: 2em;
-      }
-      .highlight-text {
-        font-size: 1em;
-      }
-      .contact-item {
-        width: 100%;
-        max-width: 300px;
-      }
-    }
-
-    /****************************************
-     * 10) Skip Link & Accessibility
-     ****************************************/
-    .skip-link {
-      position: absolute;
-      top: -40px;
-      left: 0;
-      background: var(--secondary-qrbay);
-      color: #fff;
-      padding: 8px 16px;
-      z-index: 100;
-      transition: top 0.3s;
-    }
-    .skip-link:focus {
-      top: 0;
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .hero {
-        animation: none;
-      }
-    }
-    a:focus, button:focus {
-      outline: 2px dashed var(--secondary-qrbay);
-      outline-offset: 4px;
-    }
-  </style>
+        /* --- Scroll Animation --- */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
-<body>
-  <!-- Skip Link for Accessibility -->
-  <a href="#main-content" class="skip-link">Bỏ qua nội dung khác, đi đến phần chính</a>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-300">
 
-  <!-- Header -->
-  <header>
-    <div class="container">
-      <h1>Vutas Studio</h1>
-      <nav aria-label="Main Navigation">
-        <ul>
-          <li><a href="#services">Sản phẩm</a></li>
-          <li><a href="https://vutas.net/download/" target="_blank" rel="noopener noreferrer">Tải Ứng Dụng</a></li>
-          <li><a href="#contact">Liên hệ</a></li>
-          <li>
-            <!-- Nút Dark Mode -->
-            <button type="button" class="dark-mode-toggle" id="darkModeToggle">
-              <i class="fas fa-moon"></i> Dark Mode
-            </button>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-  
-  
-  <!-- Main Content -->
-  <main id="main-content">
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="container">
-        <h2>Chào mừng đến với Vutas Studio</h2>
-        <p class="highlight-text">
-          Các ứng dụng iOS sáng tạo, nâng tầm trải nghiệm số của bạn
-        </p>
-      </div>
-    </section>
-
-    <!-- Products Section -->
-    <section id="services" class="services">
-      <div class="container">
-        <h2>Sản phẩm</h2>
-        <div class="app-list">
-            <!-- MoneyBay Card -->
-          <div class="app app-moneybay">
-            <h3 class="app-title">MoneyBay</h3>
-            <p class="app-description"><b>Sổ Thu Chi - Quản lý chi tiêu cá nhân</b></p>
-            <p class="app-description">
-              <b>MoneyBay</b> giúp bạn theo dõi thu nhập & chi tiêu dễ dàng. Báo cáo chi tiêu, thống kê hàng tháng, không cần đăng ký.
-            </p>
-            <ul class="app-features">
-              <li>Nhập liệu thu chi nhanh</li>
-              <li>Không cần tài khoản</li>
-              <li>Báo cáo chi tiêu rõ ràng</li>
-              <li>Sao lưu, xuất CSV, đồng bộ iCloud</li>
-            </ul>
-            <a href="https://tinyurl.com/moneybay" target="_blank" rel="noopener noreferrer"
-               class="app-link" aria-label="Download Vutas MoneyBay on App Store">TẢI APP MONEYBAY</a>
-            <a href="https://vutas.net/moneybay/" target="_blank" rel="noopener noreferrer"
-               class="app-link" aria-label="More info about Vutas MoneyBay">Tìm hiểu thêm</a>
-          </div>
-
-          <!-- QRBay Card -->
-          <div class="app app-qrbay">
-            <h3 class="app-title">QRBay</h3>
-            <p class="app-description">
-              <b>Máy quét mã QR • Đầu đọc mã vạch<br/>Tạo mã QR miễn phí</b>
-            </p>
-            <p class="app-description">
-              <b>QRBay</b> là ứng dụng quét mã QR & mã vạch mạnh mẽ, hỗ trợ tạo mã QR nhanh chóng. Giao diện đơn giản, dễ dùng.
-            </p>
-            <ul class="app-features">
-              <li>Quét mã QR và mã vạch nhanh</li>
-              <li>Quản lý lịch sử quét</li>
-              <li>Tạo mã QR & mã vạch riêng</li>
-              <li>Quét hàng loạt, xuất CSV</li>
-            </ul>
-            <a href="https://tinyurl.com/qrbay" target="_blank" rel="noopener noreferrer"
-               class="app-link" aria-label="Download Vutas QRBay on App Store">TẢI APP QRBAY</a>
-            <a href="https://vutas.net/qrbay/" target="_blank" rel="noopener noreferrer"
-               class="app-link" aria-label="More info about Vutas QRBay">Tìm hiểu thêm</a>
-          </div>
-
-          
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border-b border-gray-200 dark:border-gray-800">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-gray-900 dark:text-white">
+                Vutas<span class="text-blue-500">Studio</span>
+            </a>
+            <div class="flex items-center">
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#products" class="text-gray-600 dark:text-gray-400 hover:text-blue-500 transition-colors" data-lang-key="navProducts">Sản phẩm</a>
+                    <a href="#contact" class="text-gray-600 dark:text-gray-400 hover:text-blue-500 transition-colors" data-lang-key="navContact">Liên hệ</a>
+                </nav>
+                <div class="hidden md:flex items-center border-l border-gray-200 dark:border-gray-700 ml-6 pl-6 space-x-5">
+                    <!-- <button id="theme-toggle" class="text-gray-500 dark:text-gray-400 hover:text-blue-500" title="Toggle theme">
+                        <svg id="theme-icon-dark" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                        <svg id="theme-icon-light" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </button> -->
+                    <div class="relative">
+                        <button id="lang-switcher-button" class="flex items-center text-gray-500 dark:text-gray-400 hover:text-blue-500 transition-colors" title="Change language">
+                            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m4.25 16l-4.25-4.25M19.5 19.5l-4.25-4.25M19.5 19.5h-4.25M19.5 19.5v-4.25M9 12a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                            <span id="current-lang-desktop" class="ml-1 font-semibold">VI</span>
+                        </button>
+                        <div id="lang-switcher-dropdown" class="hidden absolute right-0 mt-2 py-1 w-24 bg-white dark:bg-gray-800 rounded-md shadow-lg border border-gray-200 dark:border-gray-700">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" data-lang="vi">Tiếng Việt</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" data-lang="en">English</a>
+                        </div>
+                    </div>
+                </div>
+                <button id="mobile-menu-button" class="md:hidden ml-4 text-gray-800 dark:text-white">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+                </button>
+            </div>
         </div>
-      </div>
-    </section>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4 border-t border-gray-200 dark:border-gray-700">
+            </div>
+    </header>
 
-    <!-- Contact Us Section -->
-    <section id="contact" class="contact">
-      <div class="container">
-        <h2>Kết nối cùng chúng tôi</h2>
-        <div class="contact-content">
-          <div class="contact-item">
-            <a href="https://www.facebook.com/moneybayapp" target="_blank" rel="noopener noreferrer"
-               class="contact-link" aria-label="MoneyBay App on Facebook">
-              <i class="fab fa-facebook-f" aria-hidden="true"></i>
-              Theo dõi MoneyBay
-            </a>
-          </div>
-          <div class="contact-item">
-            <a href="https://www.facebook.com/qrbayapp" target="_blank" rel="noopener noreferrer"
-               class="contact-link" aria-label="QRBay App on Facebook">
-              <i class="fab fa-facebook-f" aria-hidden="true"></i>
-              Theo dõi QRBay
-            </a>
-          </div>
-          <div class="contact-item">
-            <a href="mailto:contact@vutas.net" class="contact-link" aria-label="Email Vutas Studio">
-              <i class="fas fa-envelope" aria-hidden="true"></i>
-              Email: contact@vutas.net
-            </a>
-          </div>
+    <main id="main-content">
+        <section class="aurora-bg">
+            <div class="relative z-10 container mx-auto px-6 pt-40 pb-28 md:pt-48 md:pb-36 text-center animate-on-scroll">
+                <h1 class="text-5xl md:text-7xl font-black leading-tight animated-gradient-text" data-lang-key="heroTitle">Vutas Studio</h1>
+                <p class="mt-8 text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto" data-lang-key="heroSubtitle">
+                    Khám phá các ứng dụng iOS được thiết kế tỉ mỉ, tập trung vào sự đơn giản, hiệu quả và trải nghiệm người dùng vượt trội.
+                </p>
+                <div class="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <a href="https://apps.apple.com/developer/le-canh-phong/id1743184726" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto flex items-center justify-center gap-3 bg-gray-900 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-black transition-all transform hover:scale-105">
+                         <!-- <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9.515 5.515a3.536 3.536 0 1 0 -5.001 5.001a3.536 3.536 0 0 0 5.001 -5.001z" /><path d="M14.485 14.485a3.536 3.536 0 1 0 -5.001 5.001a3.536 3.536 0 0 0 5.001 -5.001z" /><path d="M9.515 14.485a3.536 3.536 0 1 0 -5.001 -5.001a3.536 3.536 0 0 0 5.001 5.001z" /><path d="M14.485 9.515a3.536 3.536 0 1 0 -5.001 -5.001a3.536 3.536 0 0 0 5.001 5.001z" /></svg> -->
+                        <span data-lang-key="heroCTA">Xem trên App Store</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="py-20 md:py-28 section-bg">
+            <div class="relative z-10 container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto animate-on-scroll">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white" data-lang-key="productsTitle">Sản phẩm nổi bật</h2>
+                    <p class="mt-4 text-gray-600 dark:text-gray-400" data-lang-key="productsSubtitle">
+                        Các công cụ được thiết kế để giải quyết những nhu cầu thực tế một cách hiệu quả nhất.
+                    </p>
+                </div>
+                <div class="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    <div class="app-card app-card-moneybay bg-white dark:bg-gray-800/50 p-8 rounded-xl shadow-lg hover:shadow-2xl animate-on-scroll">
+                        <div class="flex items-center gap-4">
+                            <img src="https://vutas.net/moneybay/assets/icon.png" class="w-16 h-16 rounded-2xl" alt="MoneyBay Logo">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-900 dark:text-white">MoneyBay</h3>
+                                <p class="font-semibold text-blue-500" data-lang-key="moneybayTagline">Sổ Thu Chi Cá Nhân</p>
+                            </div>
+                        </div>
+                        <p class="mt-6 text-gray-600 dark:text-gray-400" data-lang-key="moneybayDesc">Theo dõi thu nhập & chi tiêu dễ dàng. Báo cáo trực quan, không cần đăng ký, dữ liệu an toàn trên thiết bị của bạn.</p>
+                        <div class="mt-6 space-y-4">
+                            <div class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-500 flex-shrink-0" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" /><path d="M13.5 6.5l4 4" /></svg><span data-lang-key="moneybayFeature1">Nhập liệu nhanh chóng</span></div>
+                            <div class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-500 flex-shrink-0" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M3.6 9h16.8" /><path d="M3.6 15h16.8" /><path d="M11.5 3a17 17 0 0 0 0 18" /><path d="M12.5 3a17 17 0 0 1 0 18" /></svg><span data-lang-key="moneybayFeature2">Báo cáo trực quan, dễ hiểu</span></div>
+                            <div class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-500 flex-shrink-0" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 18a4.6 4.4 0 0 1 0 -9a5 4.5 0 0 1 11 2h1a3.5 3.5 0 0 1 0 7h-1" /><path d="M9 15l3 -3l3 3" /><path d="M12 12v9" /></svg><span data-lang-key="moneybayFeature3">Đồng bộ iCloud & Xuất CSV</span></div>
+                        </div>
+                        <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 relative z-10">
+                            <a href="https://tinyurl.com/moneybay" target="_blank" rel="noopener noreferrer" class="text-center bg-blue-500 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-600 transition-all" data-lang-key="btnDownloadMoneyBay">Tải MoneyBay</a>
+                            <a href="https://vutas.net/moneybay/" target="_blank" rel="noopener noreferrer" class="text-center bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-semibold px-6 py-3 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-all" data-lang-key="btnLearnMore">Tìm hiểu thêm</a>
+                        </div>
+                    </div>
+                    <div class="app-card app-card-qrbay bg-white dark:bg-gray-800/50 p-8 rounded-xl shadow-lg hover:shadow-2xl animate-on-scroll" style="animation-delay: 0.1s;">
+                         <div class="flex items-center gap-4">
+                            <img src="https://vutas.net/qrbay/assets/icon.png" class="w-16 h-16 rounded-2xl" alt="QRBay Logo">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-900 dark:text-white">QRBay</h3>
+                                <p class="font-semibold text-orange-500" data-lang-key="qrbayTagline">Quét & Tạo mã QR</p>
+                            </div>
+                        </div>
+                        <p class="mt-6 text-gray-600 dark:text-gray-400" data-lang-key="qrbayDesc">Quét mọi loại mã QR và mã vạch với tốc độ cao. Tạo mã QR cho riêng bạn một cách dễ dàng và hoàn toàn miễn phí.</p>
+                        <div class="mt-6 space-y-4">
+                            <div class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-orange-500 flex-shrink-0" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 8v-2a2 2 0 0 1 2 -2h2" /><path d="M4 16v2a2 2 0 0 0 2 2h2" /><path d="M16 4h2a2 2 0 0 1 2 2v2" /><path d="M16 20h2a2 2 0 0 0 2 -2v-2" /><path d="M9 12l3 3l3 -3" /><path d="M12 9v6" /></svg><span data-lang-key="qrbayFeature1">Quét nhanh và chính xác</span></div>
+                            <div class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-orange-500 flex-shrink-0" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" /><path d="M7 17l0 .01" /><path d="M14 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" /><path d="M7 7l0 .01" /><path d="M4 14m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" /><path d="M17 7l0 .01" /><path d="M14 14l3 0" /><path d="M20 14l0 .01" /><path d="M14 14l0 3" /><path d="M14 20l3 0" /><path d="M17 17l3 0" /><path d="M20 17l0 3" /></svg><span data-lang-key="qrbayFeature2">Tạo nhiều loại mã QR</span></div>
+                            <div class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-orange-500 flex-shrink-0" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 4m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" /><path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" /><path d="M10 12h4" /></svg><span data-lang-key="qrbayFeature3">Quản lý lịch sử & Quét hàng loạt</span></div>
+                        </div>
+                         <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 relative z-10">
+                            <a href="https://tinyurl.com/qrbay" target="_blank" rel="noopener noreferrer" class="text-center bg-orange-500 text-white font-semibold px-6 py-3 rounded-lg hover:bg-orange-600 transition-all" data-lang-key="btnDownloadQRBay">Tải QRBay</a>
+                             <a href="https://vutas.net/qrbay/" target="_blank" rel="noopener noreferrer" class="text-center bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-semibold px-6 py-3 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-all" data-lang-key="btnLearnMore">Tìm hiểu thêm</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 md:py-28 bg-gray-200 dark:bg-black">
+            <div class="container mx-auto px-6 text-center animate-on-scroll">
+                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white" data-lang-key="contactTitle">Luôn Lắng Nghe Bạn</h2>
+                 <p class="mt-4 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto" data-lang-key="contactSubtitle">
+                     Mọi góp ý, câu hỏi hay yêu cầu hỗ trợ đều quý giá. Đừng ngần ngại, hãy kết nối với chúng tôi ngay hôm nay.
+                 </p>
+                 <div class="mt-10">
+                     <a href="mailto:vutas.studio@gmail.com" class="inline-flex items-center gap-3 bg-blue-500 text-white font-bold text-lg px-8 py-4 rounded-lg hover:bg-blue-600 transition-transform hover:scale-105">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" /><path d="M3 7l9 6l9 -6" /></svg>
+                        <span data-lang-key="contactCTA">Gửi Email cho chúng tôi</span>
+                     </a>
+                 </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-100 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
+        <div class="container mx-auto px-6 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-center md:text-left text-gray-600 dark:text-gray-400">&copy; <span id="year"></span> Vutas Studio. All Rights Reserved.</p>
+                <div class="flex items-center gap-4">
+                    <a href="https://www.facebook.com/moneybayapp" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-blue-600" title="MoneyBay on Facebook">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path></svg>
+                    </a>
+                     <a href="https://www.facebook.com/qrbayapp" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-blue-600" title="QRBay on Facebook">
+                       <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path></svg>
+                    </a>
+                </div>
+            </div>
         </div>
-      </div>
-    </section>
-  </main>
+    </footer>
 
-  <!-- Footer -->
-  <footer>
-    &copy; <span id="year"></span> Vutas Studio &mdash; 
-    <a href="https://vutas.net" aria-label="Visit Vutas.net">VUTAS.NET</a>
-  </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // ===== LOGIC CHUNG & UI =====
+            document.getElementById('year').textContent = new Date().getFullYear();
+            
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const desktopNav = document.querySelector('header nav');
+            const desktopActions = document.querySelector('header .hidden.md\\:flex.items-center.border-l');
 
-  <!-- Script -->
-  <script>
-    // Cập nhật năm động
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Smooth Scrolling (Optional)
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
-        // Chỉ áp dụng smooth scroll cho anchor cùng trang (#id)
-        if (href.startsWith('#')) {
-          e.preventDefault();
-          document.querySelector(href).scrollIntoView({
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
-
-    // Intersection Observer để highlight link menu
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('header nav ul li a');
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.6
-    };
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const id = entry.target.getAttribute('id');
-          navLinks.forEach(link => {
-            link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
-            if (link.getAttribute('href') === `#${id}`) {
-              link.setAttribute('aria-current', 'page');
-            } else {
-              link.removeAttribute('aria-current');
+            if (desktopNav && mobileMenu) {
+                const navHTML = desktopNav.innerHTML;
+                const actionsHTML = desktopActions ? desktopActions.innerHTML.replace('ml-6 pl-6', 'flex-col items-start space-y-4 space-x-0').replace(/id="(.*?)"/g, 'id="$1-mobile"') : '';
+                mobileMenu.innerHTML = `<div class="space-y-2">${navHTML}</div><div class="pt-4 mt-4 border-t border-gray-200 dark:border-gray-700">${actionsHTML}</div>`;
             }
-          });
-        }
-      });
-    }, observerOptions);
-    sections.forEach(section => observer.observe(section));
 
-    // Dark Mode Toggle
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    darkModeToggle.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-    });
-  </script>
+            mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+            });
+
+            // ===== LOGIC SCROLL ANIMATION =====
+            const scrollElements = document.querySelectorAll('.animate-on-scroll');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            scrollElements.forEach(el => observer.observe(el));
+
+            // ===== LOGIC CHUYỂN ĐỔI THEME =====
+            const updateIcons = (theme) => {
+                document.querySelectorAll('#theme-icon-dark').forEach(i => i.style.display = theme === 'light' ? 'block' : 'none');
+                document.querySelectorAll('#theme-icon-light').forEach(i => i.style.display = theme === 'dark' ? 'block' : 'none');
+            };
+            const handleThemeToggle = () => {
+                const isDarkMode = document.documentElement.classList.toggle('dark');
+                const newTheme = isDarkMode ? 'dark' : 'light';
+                localStorage.setItem('vutas-theme', newTheme);
+                updateIcons(newTheme);
+            };
+            document.querySelectorAll('#theme-toggle, #theme-toggle-mobile').forEach(btn => btn?.addEventListener('click', handleThemeToggle));
+            updateIcons(document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+
+            // ===== LOGIC CHUYỂN ĐỔI NGÔN NGỮ (FIXED) =====
+            const translations = {
+                vi: {
+                    pageTitle: "Vutas Studio | Ứng dụng iOS - QRBay & MoneyBay", metaDescription: "Tải ngay các ứng dụng hữu ích từ Vutas Studio: Quét mã QRBay, Sổ Thu Chi MoneyBay. Hỗ trợ quản lý tài chính cá nhân và quét mã QR nhanh chóng.", navProducts: "Sản phẩm", navContact: "Liên hệ", heroTitle: "Vutas Studio", heroSubtitle: "Khám phá các ứng dụng iOS được thiết kế tỉ mỉ, tập trung vào sự đơn giản, hiệu quả và trải nghiệm người dùng vượt trội.", heroCTA: "Xem trên App Store", productsTitle: "Sản phẩm nổi bật", productsSubtitle: "Các công cụ được thiết kế để giải quyết những nhu cầu thực tế một cách hiệu quả nhất.", moneybayTagline: "Sổ Thu Chi Cá Nhân", moneybayDesc: "Theo dõi thu nhập & chi tiêu dễ dàng. Báo cáo trực quan, không cần đăng ký, dữ liệu an toàn trên thiết bị của bạn.", moneybayFeature1: "Nhập liệu nhanh chóng", moneybayFeature2: "Báo cáo trực quan, dễ hiểu", moneybayFeature3: "Đồng bộ iCloud & Xuất CSV", qrbayTagline: "Quét & Tạo mã QR", qrbayDesc: "Quét mọi loại mã QR và mã vạch với tốc độ cao. Tạo mã QR cho riêng bạn một cách dễ dàng và hoàn toàn miễn phí.", qrbayFeature1: "Quét nhanh và chính xác", qrbayFeature2: "Tạo nhiều loại mã QR", qrbayFeature3: "Quản lý lịch sử & Quét hàng loạt", btnDownloadMoneyBay: "Tải MoneyBay", btnDownloadQRBay: "Tải QRBay", btnLearnMore: "Tìm hiểu thêm", contactTitle: "Luôn Lắng Nghe Bạn", contactSubtitle: "Mọi góp ý, câu hỏi hay yêu cầu hỗ trợ đều quý giá. Đừng ngần ngại, hãy kết nối với chúng tôi ngay hôm nay.", contactCTA: "Gửi Email: vutas.studio@gmail.com",
+                },
+                en: {
+                    pageTitle: "Vutas Studio | iOS Apps - QRBay & MoneyBay", metaDescription: "Download useful apps from Vutas Studio: QRBay Scanner, MoneyBay Ledger. Support for personal finance management and fast QR code scanning.", navProducts: "Products", navContact: "Contact", heroTitle: "Vutas Studio", heroSubtitle: "Discover meticulously crafted iOS apps focused on simplicity, efficiency, and a superior user experience.", heroCTA: "View on App Store", productsTitle: "Featured Products", productsSubtitle: "Tools designed to solve real-world needs in the most effective way.", moneybayTagline: "Personal Expense Ledger", moneybayDesc: "Easily track income & expenses. Visual reports, no registration required, your data stays safe on your device.", moneybayFeature1: "Fast Data Entry", moneybayFeature2: "Intuitive & Visual Reports", moneybayFeature3: "iCloud Sync & CSV Export", qrbayTagline: "QR Scanner & Creator", qrbayDesc: "Scan all types of QR codes and barcodes with high speed. Create your own QR codes easily and completely free.", qrbayFeature1: "Fast and Accurate Scanning", qrbayFeature2: "Create Multiple QR Types", qrbayFeature3: "History & Batch Scanning", btnDownloadMoneyBay: "Download MoneyBay", btnDownloadQRBay: "Download QRBay", btnLearnMore: "Learn More", contactTitle: "We're Here to Listen", contactSubtitle: "Every piece of feedback, question, or support request is valuable. Don't hesitate to connect with us today.", contactCTA: "Email Us: vutas.studio@gmail.com",
+                }
+            };
+            const setLanguage = (lang) => {
+                if (!translations[lang]) return;
+                document.documentElement.lang = lang;
+                localStorage.setItem('vutas-lang', lang);
+                document.querySelectorAll('[data-lang-key]').forEach(el => {
+                    const key = el.getAttribute('data-lang-key');
+                    if (translations[lang][key]) {
+                        if (el.tagName === 'META') el.content = translations[lang][key];
+                        else el.innerHTML = translations[lang][key];
+                    }
+                });
+                document.querySelectorAll('#current-lang-desktop, #current-lang-desktop-mobile').forEach(span => { if(span) span.textContent = lang.toUpperCase() });
+                document.getElementById('lang-switcher-dropdown')?.classList.add('hidden');
+                 document.getElementById('lang-switcher-dropdown-mobile')?.classList.add('hidden');
+            };
+
+            // Gán sự kiện click một cách an toàn và cụ thể hơn
+            document.querySelectorAll('[data-lang]').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault(); // Chỉ ngăn chặn hành vi mặc định của các nút ngôn ngữ
+                    setLanguage(link.getAttribute('data-lang'));
+                });
+            });
+
+            document.querySelectorAll('#lang-switcher-button, #lang-switcher-button-mobile').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const dropdownId = button.id.replace('button', 'dropdown');
+                    document.getElementById(dropdownId)?.classList.toggle('hidden');
+                });
+            });
+            
+            // Đóng dropdown khi click ra ngoài
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('#lang-switcher-button, #lang-switcher-button-mobile')) {
+                    document.querySelectorAll('#lang-switcher-dropdown, #lang-switcher-dropdown-mobile').forEach(d => d?.classList.add('hidden'));
+                }
+            });
+            
+            setLanguage(localStorage.getItem('vutas-lang') || 'vi');
+        });
+    </script>
 </body>
 </html>
