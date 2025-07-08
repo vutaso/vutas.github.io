@@ -73,84 +73,6 @@
         .faq-question.active span {
             transform: rotate(0deg);
         }
-        /* Typing Demo Styles */
-.typing-demo {
-    font-family: 'Courier New', monospace;
-    animation: fadeInUp 1s ease forwards;
-    animation-delay: 0.5s;
-    opacity: 0;
-}
-
-.typing-demo.visible {
-    opacity: 1;
-}
-
-
-/* Cursor remains bright and blinking */
-.cursor-blink {
-    animation: blink 1s infinite;
-    color: #10b981;
-    font-weight: 700;
-    text-shadow: none;
-}
-
-/* Specific styling for different line types */
-.income-line {
-    color: #10b981; /* Xanh lá cho thu nhập */
-    font-weight: 700;
-    text-shadow: none;
-}
-
-.expense-line {
-    color: #ef4444; /* Đỏ cho chi tiêu */
-    font-weight: 700;
-    text-shadow: none;
-}
-
-.summary-line {
-    color: #3b82f6; /* Xanh dương cho tổng kết */
-    font-weight: 700;
-    text-shadow: none;
-}
-
-@keyframes blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0; }
-}
-
-/* Make typing text bold and brighter */
-.demo-line {
-    font-weight: 700; /* Bold text */
-    transition: opacity 0.3s ease;
-    min-height: 20px;
-    opacity: 0;
-}
-
-.demo-line:first-child {
-    opacity: 1; /* Dòng đầu tiên luôn hiển thị */
-}
-
-.demo-line.show {
-    opacity: 1 !important;
-}
-
-/* Terminal Window Styling */
-.typing-demo {
-    background: rgba(0, 0, 0, 0.95);
-    border: 1px solid #10b981;
-    box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
     </style>
 </head>
 <body class="antialiased bg-white text-slate-800 dark:bg-black dark:text-slate-200">
@@ -226,77 +148,43 @@
     </header>
 
     <main>
-       <section class="relative pt-32 pb-20 md:pt-48 md:pb-32 text-center overflow-hidden hero-gradient">
-    <div class="container mx-auto px-6">
-        <div class="max-w-3xl mx-auto reveal">
-            <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 dark:text-white leading-tight" data-lang-key="heroTitle">
-                Sổ thu chi <span class="text-green-500 dark:text-green-400">MoneyBay</span>
-            </h1>
-            
-       <!-- Typing Animation Section -->
-<div class="mt-8 mb-6">
-    <div class="typing-demo bg-black/95 dark:bg-slate-900/95 backdrop-blur-sm rounded-xl p-6 max-w-2xl mx-auto border border-green-500/50">
-        <div class="flex items-center mb-4">
-            <div class="flex space-x-2">
-                <div class="w-3 h-3 bg-red-500 rounded-full"></div>
-                <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                <div class="w-3 h-3 bg-green-500 rounded-full"></div>
-            </div>
-        </div>
-        
-        <div class="text-left font-mono text-sm space-y-2">
-            <div class="demo-line text-blue-400" id="line1">
-                <span class="text-gray-400">></span> <span id="typing-text-1"></span><span class="cursor-blink">|</span>
-            </div>
-            <div class="demo-line income-line" id="line2">
-                <span class="text-gray-400">$</span> <span id="typing-text-2"></span><span class="cursor-blink">|</span>
-            </div>
-            <div class="demo-line expense-line" id="line3">
-                <span class="text-gray-400">$</span> <span id="typing-text-3"></span><span class="cursor-blink">|</span>
-            </div>
-            <div class="demo-line expense-line" id="line4">
-                <span class="text-gray-400">$</span> <span id="typing-text-4"></span><span class="cursor-blink">|</span>
-            </div>
-            <div class="demo-line summary-line" id="line5">
-                <span class="text-gray-400">></span> <span id="typing-text-5"></span><span class="cursor-blink">|</span>
-            </div>
-        </div>
-    </div>
-</div>
-            
-            <p class="mt-6 text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto" data-lang-key="heroSubtitle">
-                Quản lý chi tiêu cá nhân một cách đơn giản, nhanh chóng và hiệu quả. Nắm bắt toàn cảnh tài chính của bạn chỉ trong vài thao tác.
-            </p>
-            
-            <div class="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
-                <a href="https://apps.apple.com/app/moneybay-expense-manager/id6737480496" target="_blank" class="cta-button w-full sm:w-auto flex items-center justify-center gap-3 bg-slate-900 text-white dark:bg-white dark:text-black font-semibold px-6 py-4 rounded-lg shadow-lg">
-                    <img src="assets/apple-logo.png" alt="Apple Logo" class="w-6 h-6 dark:hidden">
-                    <img src="assets/apple-logo.png" alt="Apple Logo" class="w-6 h-6 hidden dark:inline">
-                    <span data-lang-key="downloadAppStore">Tải từ App Store</span>
-                </a>
-                <a href="#" class="cta-button w-full sm:w-auto flex items-center justify-center gap-3 bg-gray-100 text-slate-800 dark:bg-slate-800 dark:text-white font-semibold px-6 py-4 rounded-lg border border-gray-300 dark:border-slate-700 hover:bg-gray-200 dark:hover:bg-slate-700">
-                   <img src="assets/google-play.png" alt="Google Play Logo" class="w-6 h-6 dark:hidden">
-                    <img src="assets/google-play.png" alt="Google Play Logo" class="w-6 h-6 hidden dark:inline">
-                   <span data-lang-key="downloadGooglePlay">Tải từ Google Play (Soon)</span>
-                </a>
-            </div>
-        </div>
-        
-        <div class="mt-16 md:mt-24 reveal">
-            <div class="relative max-w-4xl mx-auto">
-                 <div class="absolute -inset-2 hidden dark:block">
-                    <div class="w-full h-full max-w-4xl mx-auto lg:h-full opacity-40 blur-lg" style="background: linear-gradient(90deg, #44ff9a -0.55%, #44b0ff 22.86%, #8b44ff 48.36%, #ff667a 73.33%, #ebff70 99.34%);"></div>
+        <section class="relative pt-32 pb-20 md:pt-48 md:pb-32 text-center overflow-hidden hero-gradient">
+            <div class="container mx-auto px-6">
+                <div class="max-w-3xl mx-auto reveal">
+                    <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 dark:text-white leading-tight" data-lang-key="heroTitle">
+                        Sổ thu chi <span class="text-green-500 dark:text-green-400">MoneyBay</span>
+                    </h1>
+                    <p class="mt-6 text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto" data-lang-key="heroSubtitle">
+                        Quản lý chi tiêu cá nhân một cách đơn giản, nhanh chóng và hiệu quả. Nắm bắt toàn cảnh tài chính của bạn chỉ trong vài thao tác.
+                    </p>
+                    <div class="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
+                        <a href="https://apps.apple.com/app/moneybay-expense-manager/id6737480496" target="_blank" class="cta-button w-full sm:w-auto flex items-center justify-center gap-3 bg-slate-900 text-white dark:bg-white dark:text-black font-semibold px-6 py-4 rounded-lg shadow-lg">
+                            <img src="assets/apple-logo.png" alt="Apple Logo" class="w-6 h-6 dark:hidden">
+                            <img src="assets/apple-logo.png" alt="Apple Logo" class="w-6 h-6 hidden dark:inline">
+                            <span data-lang-key="downloadAppStore">Tải từ App Store</span>
+                        </a>
+                        <a href="#" class="cta-button w-full sm:w-auto flex items-center justify-center gap-3 bg-gray-100 text-slate-800 dark:bg-slate-800 dark:text-white font-semibold px-6 py-4 rounded-lg border border-gray-300 dark:border-slate-700 hover:bg-gray-200 dark:hover:bg-slate-700">
+                           <img src="assets/google-play.png" alt="Google Play Logo" class="w-6 h-6 dark:hidden">
+                            <img src="assets/google-play.png" alt="Google Play Logo" class="w-6 h-6 hidden dark:inline">
+                           <span data-lang-key="downloadGooglePlay">Tải từ Google Play (Soon)</span>
+                        </a>
+                    </div>
                 </div>
-                <img src="assets/banner_moneybay_1200x750.png" 
-                     alt="Giao diện ứng dụng MoneyBay"
-                     class="relative rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 dark:hidden">
-                <img src="assets/banner_moneybay_1200x750.png" 
-                     alt="Giao diện ứng dụng MoneyBay"
-                     class="relative rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 hidden dark:block">
+                <div class="mt-16 md:mt-24 reveal">
+                    <div class="relative max-w-4xl mx-auto">
+                         <div class="absolute -inset-2 hidden dark:block">
+                            <div class="w-full h-full max-w-4xl mx-auto lg:h-full opacity-40 blur-lg" style="background: linear-gradient(90deg, #44ff9a -0.55%, #44b0ff 22.86%, #8b44ff 48.36%, #ff667a 73.33%, #ebff70 99.34%);"></div>
+                        </div>
+                        <img src="assets/banner_moneybay_1200x750.png" 
+                             alt="Giao diện ứng dụng MoneyBay"
+                             class="relative rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 dark:hidden">
+                        <img src="assets/banner_moneybay_1200x750.png" 
+                             alt="Giao diện ứng dụng MoneyBay"
+                             class="relative rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 hidden dark:block">
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
 
         <section id="features" class="py-20 md:py-32 gradient-bg">
             <div class="container mx-auto px-6">
@@ -609,10 +497,10 @@
             // ===== START: Language Switcher Logic =====
             const translations = {
                 vi: {
-                    pageTitle: "Sổ thu chi MoneyBay – Quản lý chi tiêu cá nhân hiệu quả", navFeatures: "Tính năng", navAI: "Trợ lý AI", navScanner: "PDF Scanner", navLimits: "Hạn mức chi", navFaq: "FAQ", navDownload: "Tải ứng dụng", mNavFeatures: "Tính năng", mNavAI: "Trợ lý AI", mNavScanner: "PDF Scanner", mNavLimits: "Hạn mức", mNavFaq: "FAQ", mNavLanguage: "Ngôn ngữ", mNavDownload: "Tải ứng dụng", heroTitle: "Quản lý chi tiêu đơn giản nhất với <span class='text-green-500 dark:text-green-400'>MoneyBay</span>", heroSubtitle: "Quản lý chi tiêu cá nhân một cách đơn giản, nhanh chóng và hiệu quả. Nắm bắt toàn cảnh tài chính của bạn chỉ trong vài thao tác.", downloadAppStore: "Tải từ App Store", downloadGooglePlay: "Tải từ Google Play (Soon)", featuresTitle: "Tất cả trong một ứng dụng", featuresSubtitle: "MoneyBay cung cấp đầy đủ công cụ bạn cần để kiểm soát ngân sách và tối ưu hóa tài chính cá nhân.", feature1Title: "Giao diện trực quan", feature1Desc: "Thiết kế đơn giản, dễ dàng thao tác ngay từ lần đầu sử dụng.", feature2Title: "Không cần tài khoản", feature2Desc: "Bắt đầu sử dụng ngay lập tức mà không cần quy trình đăng ký phức tạp.", feature3Title: "Nhập liệu dễ dàng", feature3Desc: "Ghi lại các khoản thu hoặc chi chỉ trong vài giây.", feature4Title: "Đồng bộ iCloud", feature4Desc: "Dữ liệu an toàn và luôn được cập nhật trên mọi thiết bị iOS của bạn.", feature5Title: "Chế độ màu sắc", feature5Desc: "Tùy biến giao diện với nhiều chủ đề màu sắc phong phú, hợp sở thích.", feature6Title: "Xuất dữ liệu CSV", feature6Desc: "Dễ dàng sao lưu và xuất dữ liệu ra file CSV để lưu trữ hoặc phân tích.", aiTag: "Trợ lý thông minh", aiTitle: "Ghi chép rảnh tay với Trợ lý AI", aiDesc: "Không cần nhập liệu thủ công. Chỉ cần trò chuyện hoặc ghi âm giọng nói, Trợ lý AI của MoneyBay sẽ tự động nhận diện và ghi lại các khoản thu chi cho bạn. Nhanh chóng, chính xác và vô cùng tiện lợi.", aiFeature1: "Ghi chép chi tiêu qua chat.", aiFeature2: "Tự động nhận diện nội dung qua giọng nói.", aiFeature3: "Phân loại giao dịch thông minh.", scannerTag: "Công cụ tiện ích", scannerTitle: "Quét hóa đơn và Lập danh sách mua sắm", scannerDesc: "Tích hợp các công cụ mạnh mẽ giúp bạn quản lý cuộc sống dễ dàng hơn. Quét và lưu trữ mọi hóa đơn, tài liệu với MoneyBay PDF Scanner. Lên kế hoạch mua sắm thông minh để không bao giờ bỏ sót món đồ nào.", scannerFeature1: "<strong>PDF Scanner:</strong> Quét tài liệu, hóa đơn thành file PDF chất lượng cao, không watermark.", scannerFeature2: "<strong>Danh sách mua sắm:</strong> Lập kế hoạch các món đồ cần mua hiệu quả.", limitsTag: "Kiểm soát tài chính", limitsTitle: "Hạn mức chi và Chuyển đổi tiền tệ", limitsDesc: "Thiết lập giới hạn chi tiêu cho từng danh mục để quản lý ngân sách hiệu quả hơn. Công cụ chuyển đổi tiền tệ tích hợp giúp bạn dễ dàng theo dõi các giao dịch quốc tế.", limitsFeature1: "<strong>Hạn mức chi:</strong> Đặt ra các giới hạn chi tiêu và nhận cảnh báo khi gần đạt đến.", limitsFeature2: "<strong>Chuyển đổi tiền tệ:</strong> Tích hợp công cụ chuyển đổi tiền tệ nhanh chóng và chính xác.", faqTitle: "Câu Hỏi Thường Gặp", faqSubtitle: "Tìm câu trả lời cho các câu hỏi phổ biến nhất về MoneyBay.", faq1q: "Làm thế nào để bắt đầu sử dụng MoneyBay?", faq1a: "Để bắt đầu, bạn chỉ cần tải ứng dụng MoneyBay về thiết bị của mình. Sau khi mở ứng dụng, bạn có thể thêm thu nhập và chi tiêu của mình vào các mục tương ứng. Ứng dụng sẽ tự động tính toán và đưa ra báo cáo tài chính cho bạn.", faq2q: "Làm sao để xuất dữ liệu chi tiêu dưới dạng CSV?", faq2a: "Để xuất dữ liệu chi tiêu, bạn chỉ cần vào phần \"Cài đặt\", chọn \"Sao lưu/Khôi phục dữ liệu\", chọn \"Xuất sang CSV\". Dữ liệu sẽ được xuất dưới dạng file CSV, mà bạn có thể mở trên máy tính hoặc gửi qua email để phân tích thêm.", faq3q: "Ứng dụng có hỗ trợ sao lưu dữ liệu không?", faq3a: "Có, MoneyBay hỗ trợ sao lưu dữ liệu vào đám mây thông qua iCloud. Bạn chỉ cần bật tính năng sao lưu trong phần \"Cài đặt\" của ứng dụng để đảm bảo dữ liệu của bạn được lưu trữ an toàn và có thể phục hồi khi cần thiết.", faq4q: "Làm sao để bảo vệ dữ liệu của tôi trong ứng dụng?", faq4a: "MoneyBay cam kết bảo vệ sự riêng tư của bạn. Dữ liệu của bạn được lưu trữ cục bộ trên thiết bị hoặc trên iCloud cá nhân của bạn và không được chia sẻ với bất kỳ bên thứ ba nào.", faq5q: "Tôi có thể liên hệ với đội ngũ hỗ trợ không?", faq5a: "Chắc chắn rồi! Để được hỗ trợ thêm, bạn có thể liên hệ với chúng tôi qua email hoặc Facebook:", ctaTitle: "Bắt đầu quản lý tài chính của bạn ngay hôm nay!", ctaSubtitle: "Tải MoneyBay miễn phí và trải nghiệm phương pháp quản lý chi tiêu thông minh và hiệu quả nhất.", ctaAppStore: "Tải từ App Store", ctaGooglePlay: "Tải từ Google Play", footerContact: "Liên hệ & Hỗ trợ", footerEmail: "Email", footerTagline: "Một sản phẩm được tạo ra với ❤️ để giúp bạn quản lý tài chính tốt hơn."
+                    pageTitle: "Sổ thu chi MoneyBay – Quản lý chi tiêu cá nhân hiệu quả", navFeatures: "Tính năng", navAI: "Trợ lý AI", navScanner: "PDF Scanner", navLimits: "Hạn mức chi", navFaq: "FAQ", navDownload: "Tải ứng dụng", mNavFeatures: "Tính năng", mNavAI: "Trợ lý AI", mNavScanner: "PDF Scanner", mNavLimits: "Hạn mức", mNavFaq: "FAQ", mNavLanguage: "Ngôn ngữ", mNavDownload: "Tải ứng dụng", heroTitle: "Sổ thu chi <span class='text-green-500 dark:text-green-400'>MoneyBay</span>", heroSubtitle: "Quản lý chi tiêu cá nhân một cách đơn giản, nhanh chóng và hiệu quả. Nắm bắt toàn cảnh tài chính của bạn chỉ trong vài thao tác.", downloadAppStore: "Tải từ App Store", downloadGooglePlay: "Tải từ Google Play (Soon)", featuresTitle: "Tất cả trong một ứng dụng", featuresSubtitle: "MoneyBay cung cấp đầy đủ công cụ bạn cần để kiểm soát ngân sách và tối ưu hóa tài chính cá nhân.", feature1Title: "Giao diện trực quan", feature1Desc: "Thiết kế đơn giản, dễ dàng thao tác ngay từ lần đầu sử dụng.", feature2Title: "Không cần tài khoản", feature2Desc: "Bắt đầu sử dụng ngay lập tức mà không cần quy trình đăng ký phức tạp.", feature3Title: "Nhập liệu dễ dàng", feature3Desc: "Ghi lại các khoản thu hoặc chi chỉ trong vài giây.", feature4Title: "Đồng bộ iCloud", feature4Desc: "Dữ liệu an toàn và luôn được cập nhật trên mọi thiết bị iOS của bạn.", feature5Title: "Chế độ màu sắc", feature5Desc: "Tùy biến giao diện với nhiều chủ đề màu sắc phong phú, hợp sở thích.", feature6Title: "Xuất dữ liệu CSV", feature6Desc: "Dễ dàng sao lưu và xuất dữ liệu ra file CSV để lưu trữ hoặc phân tích.", aiTag: "Trợ lý thông minh", aiTitle: "Ghi chép rảnh tay với Trợ lý AI", aiDesc: "Không cần nhập liệu thủ công. Chỉ cần trò chuyện hoặc ghi âm giọng nói, Trợ lý AI của MoneyBay sẽ tự động nhận diện và ghi lại các khoản thu chi cho bạn. Nhanh chóng, chính xác và vô cùng tiện lợi.", aiFeature1: "Ghi chép chi tiêu qua chat.", aiFeature2: "Tự động nhận diện nội dung qua giọng nói.", aiFeature3: "Phân loại giao dịch thông minh.", scannerTag: "Công cụ tiện ích", scannerTitle: "Quét hóa đơn và Lập danh sách mua sắm", scannerDesc: "Tích hợp các công cụ mạnh mẽ giúp bạn quản lý cuộc sống dễ dàng hơn. Quét và lưu trữ mọi hóa đơn, tài liệu với MoneyBay PDF Scanner. Lên kế hoạch mua sắm thông minh để không bao giờ bỏ sót món đồ nào.", scannerFeature1: "<strong>PDF Scanner:</strong> Quét tài liệu, hóa đơn thành file PDF chất lượng cao, không watermark.", scannerFeature2: "<strong>Danh sách mua sắm:</strong> Lập kế hoạch các món đồ cần mua hiệu quả.", limitsTag: "Kiểm soát tài chính", limitsTitle: "Hạn mức chi và Chuyển đổi tiền tệ", limitsDesc: "Thiết lập giới hạn chi tiêu cho từng danh mục để quản lý ngân sách hiệu quả hơn. Công cụ chuyển đổi tiền tệ tích hợp giúp bạn dễ dàng theo dõi các giao dịch quốc tế.", limitsFeature1: "<strong>Hạn mức chi:</strong> Đặt ra các giới hạn chi tiêu và nhận cảnh báo khi gần đạt đến.", limitsFeature2: "<strong>Chuyển đổi tiền tệ:</strong> Tích hợp công cụ chuyển đổi tiền tệ nhanh chóng và chính xác.", faqTitle: "Câu Hỏi Thường Gặp", faqSubtitle: "Tìm câu trả lời cho các câu hỏi phổ biến nhất về MoneyBay.", faq1q: "Làm thế nào để bắt đầu sử dụng MoneyBay?", faq1a: "Để bắt đầu, bạn chỉ cần tải ứng dụng MoneyBay về thiết bị của mình. Sau khi mở ứng dụng, bạn có thể thêm thu nhập và chi tiêu của mình vào các mục tương ứng. Ứng dụng sẽ tự động tính toán và đưa ra báo cáo tài chính cho bạn.", faq2q: "Làm sao để xuất dữ liệu chi tiêu dưới dạng CSV?", faq2a: "Để xuất dữ liệu chi tiêu, bạn chỉ cần vào phần \"Cài đặt\", chọn \"Sao lưu/Khôi phục dữ liệu\", chọn \"Xuất sang CSV\". Dữ liệu sẽ được xuất dưới dạng file CSV, mà bạn có thể mở trên máy tính hoặc gửi qua email để phân tích thêm.", faq3q: "Ứng dụng có hỗ trợ sao lưu dữ liệu không?", faq3a: "Có, MoneyBay hỗ trợ sao lưu dữ liệu vào đám mây thông qua iCloud. Bạn chỉ cần bật tính năng sao lưu trong phần \"Cài đặt\" của ứng dụng để đảm bảo dữ liệu của bạn được lưu trữ an toàn và có thể phục hồi khi cần thiết.", faq4q: "Làm sao để bảo vệ dữ liệu của tôi trong ứng dụng?", faq4a: "MoneyBay cam kết bảo vệ sự riêng tư của bạn. Dữ liệu của bạn được lưu trữ cục bộ trên thiết bị hoặc trên iCloud cá nhân của bạn và không được chia sẻ với bất kỳ bên thứ ba nào.", faq5q: "Tôi có thể liên hệ với đội ngũ hỗ trợ không?", faq5a: "Chắc chắn rồi! Để được hỗ trợ thêm, bạn có thể liên hệ với chúng tôi qua email hoặc Facebook:", ctaTitle: "Bắt đầu quản lý tài chính của bạn ngay hôm nay!", ctaSubtitle: "Tải MoneyBay miễn phí và trải nghiệm phương pháp quản lý chi tiêu thông minh và hiệu quả nhất.", ctaAppStore: "Tải từ App Store", ctaGooglePlay: "Tải từ Google Play", footerContact: "Liên hệ & Hỗ trợ", footerEmail: "Email", footerTagline: "Một sản phẩm được tạo ra với ❤️ để giúp bạn quản lý tài chính tốt hơn."
                 },
                 en: {
-                    pageTitle: "MoneyBay Ledger – Effective Personal Expense Management", navFeatures: "Features", navAI: "AI Assistant", navScanner: "PDF Scanner", navLimits: "Spending limit", navFaq: "FAQ", navDownload: "Download App", mNavFeatures: "Features", mNavAI: "AI Assistant", mNavScanner: "PDF Scanner", mNavLimits: "Limits", mNavFaq: "FAQ", mNavLanguage: "Language", mNavDownload: "Download App", heroTitle: "The simplest expense management with <span class='text-green-500 dark:text-green-400'>MoneyBay</span>", heroSubtitle: "Manage your personal spending simply, quickly, and effectively. Get a complete overview of your finances in just a few taps.", downloadAppStore: "Download on the App Store", downloadGooglePlay: "Get it on Google Play (Soon)", featuresTitle: "All in one application", featuresSubtitle: "MoneyBay provides all the tools you need to control your budget and optimize your personal finances.", feature1Title: "Intuitive Interface", feature1Desc: "Simple design, easy to use from the very first time.", feature2Title: "No Account Needed", feature2Desc: "Start using immediately without a complicated registration process.", feature3Title: "Easy Data Entry", feature3Desc: "Record your income or expenses in just a few seconds.", feature4Title: "iCloud Sync", feature4Desc: "Your data is secure and always updated across all your iOS devices.", feature5Title: "Color Themes", feature5Desc: "Customize the interface with a variety of rich color themes to suit your taste.", feature6Title: "Export CSV Data", feature6Desc: "Easily back up and export data to a CSV file for storage or analysis.", aiTag: "Smart Assistant", aiTitle: "Hands-Free Logging with AI Assistant", aiDesc: "No manual data entry required. Just chat or record your voice, and MoneyBay's AI Assistant will automatically recognize and log your income and expenses for you. Fast, accurate, and incredibly convenient.", aiFeature1: "Log expenses via chat.", aiFeature2: "Automatically recognize content through voice.", aiFeature3: "Smart transaction categorization.", scannerTag: "Utility Tools", scannerTitle: "Bill Scanner & Shopping List", scannerDesc: "Integrated with powerful tools to make your life easier. Scan and store all your bills and documents with MoneyBay PDF Scanner. Plan your shopping smartly so you never miss an item.", scannerFeature1: "<strong>PDF Scanner:</strong> Scan documents and bills into high-quality, watermark-free PDF files.", scannerFeature2: "<strong>Shopping List:</strong> Effectively plan the items you need to buy.", limitsTag: "Financial Control", limitsTitle: "Spending Limits & Currency Converter", limitsDesc: "Set spending limits for each category to manage your budget more effectively. The integrated currency converter helps you easily track international transactions.", limitsFeature1: "<strong>Spending Limits:</strong> Set spending limits and receive alerts when you're getting close.", limitsFeature2: "<strong>Currency Converter:</strong> Quick and accurate integrated currency conversion tool.", faqTitle: "Frequently Asked Questions", faqSubtitle: "Find answers to the most common questions about MoneyBay.", faq1q: "How do I get started with MoneyBay?", faq1a: "To get started, simply download the MoneyBay app to your device. Once you open the app, you can add your income and expenses in the respective sections. The app will automatically calculate and provide you with financial reports.", faq2q: "How can I export my expense data as a CSV file?", faq2a: "To export your expense data, go to 'Settings', select 'Backup/Restore Data', and choose 'Export to CSV'. The data will be exported as a CSV file, which you can open on your computer or send via email for further analysis.", faq3q: "Does the app support data backup?", faq3a: "Yes, MoneyBay supports data backup to the cloud via iCloud. You just need to enable the backup feature in the app's 'Settings' to ensure your data is stored securely and can be restored when needed.", faq4q: "How is my data protected within the app?", faq4a: "MoneyBay is committed to protecting your privacy. Your data is stored locally on your device or in your personal iCloud and is not shared with any third parties.", faq5q: "Can I contact the support team?", faq5a: "Of course! for further assistance, you can contact our support team via email or Facebook:", ctaTitle: "Start managing your finances today!", ctaSubtitle: "Download MoneyBay for free and experience the smartest and most effective way to manage your expenses.", ctaAppStore: "Download on the App Store", ctaGooglePlay: "Get it on Google Play", footerContact: "Contact & Support", footerEmail: "Email", footerTagline: "A product created with ❤️ to help you manage your finances better."
+                    pageTitle: "MoneyBay Ledger – Effective Personal Expense Management", navFeatures: "Features", navAI: "AI Assistant", navScanner: "PDF Scanner", navLimits: "Spending limit", navFaq: "FAQ", navDownload: "Download App", mNavFeatures: "Features", mNavAI: "AI Assistant", mNavScanner: "PDF Scanner", mNavLimits: "Limits", mNavFaq: "FAQ", mNavLanguage: "Language", mNavDownload: "Download App", heroTitle: "Expense Tracker <span class='text-green-500 dark:text-green-400'>MoneyBay</span>", heroSubtitle: "Manage your personal spending simply, quickly, and effectively. Get a complete overview of your finances in just a few taps.", downloadAppStore: "Download on the App Store", downloadGooglePlay: "Get it on Google Play (Soon)", featuresTitle: "All in one application", featuresSubtitle: "MoneyBay provides all the tools you need to control your budget and optimize your personal finances.", feature1Title: "Intuitive Interface", feature1Desc: "Simple design, easy to use from the very first time.", feature2Title: "No Account Needed", feature2Desc: "Start using immediately without a complicated registration process.", feature3Title: "Easy Data Entry", feature3Desc: "Record your income or expenses in just a few seconds.", feature4Title: "iCloud Sync", feature4Desc: "Your data is secure and always updated across all your iOS devices.", feature5Title: "Color Themes", feature5Desc: "Customize the interface with a variety of rich color themes to suit your taste.", feature6Title: "Export CSV Data", feature6Desc: "Easily back up and export data to a CSV file for storage or analysis.", aiTag: "Smart Assistant", aiTitle: "Hands-Free Logging with AI Assistant", aiDesc: "No manual data entry required. Just chat or record your voice, and MoneyBay's AI Assistant will automatically recognize and log your income and expenses for you. Fast, accurate, and incredibly convenient.", aiFeature1: "Log expenses via chat.", aiFeature2: "Automatically recognize content through voice.", aiFeature3: "Smart transaction categorization.", scannerTag: "Utility Tools", scannerTitle: "Bill Scanner & Shopping List", scannerDesc: "Integrated with powerful tools to make your life easier. Scan and store all your bills and documents with MoneyBay PDF Scanner. Plan your shopping smartly so you never miss an item.", scannerFeature1: "<strong>PDF Scanner:</strong> Scan documents and bills into high-quality, watermark-free PDF files.", scannerFeature2: "<strong>Shopping List:</strong> Effectively plan the items you need to buy.", limitsTag: "Financial Control", limitsTitle: "Spending Limits & Currency Converter", limitsDesc: "Set spending limits for each category to manage your budget more effectively. The integrated currency converter helps you easily track international transactions.", limitsFeature1: "<strong>Spending Limits:</strong> Set spending limits and receive alerts when you're getting close.", limitsFeature2: "<strong>Currency Converter:</strong> Quick and accurate integrated currency conversion tool.", faqTitle: "Frequently Asked Questions", faqSubtitle: "Find answers to the most common questions about MoneyBay.", faq1q: "How do I get started with MoneyBay?", faq1a: "To get started, simply download the MoneyBay app to your device. Once you open the app, you can add your income and expenses in the respective sections. The app will automatically calculate and provide you with financial reports.", faq2q: "How can I export my expense data as a CSV file?", faq2a: "To export your expense data, go to 'Settings', select 'Backup/Restore Data', and choose 'Export to CSV'. The data will be exported as a CSV file, which you can open on your computer or send via email for further analysis.", faq3q: "Does the app support data backup?", faq3a: "Yes, MoneyBay supports data backup to the cloud via iCloud. You just need to enable the backup feature in the app's 'Settings' to ensure your data is stored securely and can be restored when needed.", faq4q: "How is my data protected within the app?", faq4a: "MoneyBay is committed to protecting your privacy. Your data is stored locally on your device or in your personal iCloud and is not shared with any third parties.", faq5q: "Can I contact the support team?", faq5a: "Of course! for further assistance, you can contact our support team via email or Facebook:", ctaTitle: "Start managing your finances today!", ctaSubtitle: "Download MoneyBay for free and experience the smartest and most effective way to manage your expenses.", ctaAppStore: "Download on the App Store", ctaGooglePlay: "Get it on Google Play", footerContact: "Contact & Support", footerEmail: "Email", footerTagline: "A product created with ❤️ to help you manage your finances better."
                 }
             };
             
@@ -633,11 +521,6 @@
                 });
                 localStorage.setItem('moneybay-lang', lang);
                 langSwitcherDropdown.classList.add('hidden');
-
-           // **QUAN TRỌNG**: Cập nhật typing animation với ngôn ngữ mới
-                if (typeof updateTypingLanguage === 'function') {
-                    updateTypingLanguage(lang);
-                }
             };
 
             langSwitcherButton.addEventListener('click', (e) => {
@@ -708,135 +591,6 @@
             });
              // ===== END: General UI Logic =====
         });
-
-
-   // ===== TYPING ANIMATION WITH MULTI-LANGUAGE SUPPORT =====
-const typingTextsMultiLang = {
-    vi: [
-        "MoneyBay Xin chào!",
-        "Thêm thu nhập: +2,500,000 VND - Lương tháng 10",
-        "Thêm chi tiêu: -500,000 VND - Tiền điện nước", 
-        "Thêm chi tiêu: -800,000 VND - Tiền ăn uống",
-        "Tổng kết: Tiết kiệm được 1,200,000 VND ✓"
-    ],
-    en: [
-        "MoneyBay Hello!",
-        "Add income: +$1,000 USD - October salary",
-        "Add expense: -$200 USD - Electricity bill",
-        "Add expense: -$320 USD - Food & dining",
-        "Summary: Saved $480 USD ✓"
-    ]
-};
-
-let currentLineIndex = 0;
-let currentCharIndex = 0;
-let isTyping = false;
-let typingTimeout = null;
-let currentLanguage = 'vi'; // Default language
-
-function getCurrentTexts() {
-    return typingTextsMultiLang[currentLanguage] || typingTextsMultiLang.vi;
-}
-
-function typeText() {
-    const typingTexts = getCurrentTexts();
-    
-    if (currentLineIndex >= typingTexts.length) {
-        // Hoàn thành tất cả dòng, chờ 3 giây rồi reset và bắt đầu lại
-        typingTimeout = setTimeout(() => {
-            resetTypingAnimation();
-            startTypingAnimation();
-        }, 3000);
-        return;
-    }
-    
-    const currentText = typingTexts[currentLineIndex];
-    const currentElement = document.getElementById(`typing-text-${currentLineIndex + 1}`);
-    const currentLine = document.getElementById(`line${currentLineIndex + 1}`);
-    
-    if (!currentElement || !currentLine) return;
-    
-    // Hiển thị dòng hiện tại
-    currentLine.classList.add('show');
-    currentLine.style.opacity = '1';
-    
-    if (currentCharIndex < currentText.length) {
-        // Gõ từng ký tự
-        currentElement.textContent = currentText.substring(0, currentCharIndex + 1);
-        currentCharIndex++;
-        typingTimeout = setTimeout(typeText, 80); // Tốc độ gõ
-    } else {
-        // Hoàn thành dòng hiện tại, chuyển sang dòng tiếp theo
-        typingTimeout = setTimeout(() => {
-            currentLineIndex++;
-            currentCharIndex = 0;
-            typeText();
-        }, 1200); // Dừng 1.2 giây trước khi chuyển dòng
-    }
-}
-
-function resetTypingAnimation() {
-    currentLineIndex = 0;
-    currentCharIndex = 0;
-    isTyping = false;
-    
-    // **QUAN TRỌNG**: Clear timeout để tránh xung đột
-    if (typingTimeout) {
-        clearTimeout(typingTimeout);
-        typingTimeout = null;
-    }
-    
-    // Reset tất cả các dòng về trạng thái ban đầu
-    for (let i = 1; i <= 5; i++) {
-        const line = document.getElementById(`line${i}`);
-        const text = document.getElementById(`typing-text-${i}`);
-        if (line && text) {
-            line.classList.remove('show');
-            line.style.opacity = i === 1 ? '1' : '0';
-            text.textContent = '';
-        }
-    }
-}
-
-function startTypingAnimation() {
-    if (!isTyping) {
-        isTyping = true;
-        typingTimeout = setTimeout(() => {
-            typeText();
-        }, 500);
-    }
-}
-
-// **CẬP NHẬT**: Function xử lý chuyển đổi ngôn ngữ
-function updateTypingLanguage(newLang) {
-    // Dừng animation hiện tại hoàn toàn
-    if (typingTimeout) {
-        clearTimeout(typingTimeout);
-        typingTimeout = null;
-    }
-    
-    // Cập nhật ngôn ngữ
-    currentLanguage = newLang;
-    
-    // Reset và bắt đầu lại với ngôn ngữ mới
-    resetTypingAnimation();
-    
-    // Delay nhỏ để đảm bảo reset hoàn tất
-    setTimeout(() => {
-        startTypingAnimation();
-    }, 300);
-}
-
-// Khởi động animation khi trang load
-document.addEventListener('DOMContentLoaded', function() {
-    const savedLang = localStorage.getItem('moneybay-lang') || 'vi';
-    currentLanguage = savedLang;
-    
-    setTimeout(() => {
-        startTypingAnimation();
-    }, 2000);
-});
-
     </script>
 </body>
 </html>

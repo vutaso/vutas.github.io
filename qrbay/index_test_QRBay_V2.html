@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QRBay - Trình Quét QR & Mã Vạch Thông Minh</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Alpine.js Data for Language Toggling (Moved to head) -->
+    <script>
+        function appData() {
+            return {
+                language: 'vi',
+                setLanguage(lang) {
+                    this.language = lang;
+                },
+                texts: {
+                    vi: {
+                        nav_features: 'Tính Năng',
+                        nav_how_it_works: 'Cách Hoạt Động',
+                        nav_supported_formats: 'Định Dạng',
+                        nav_download_now: 'Tải Ngay',
+                        hero_title: 'Trình Quét <span class="gradient-text">QR & Mã Vạch</span><br>Tất Cả Trong Một',
+                        hero_subtitle: 'Quét, tạo và quản lý tất cả các mã của bạn một cách dễ dàng. Trợ lý đắc lực cho việc mua sắm và quản lý thông tin hàng ngày.',
+                        hero_cta_ios: 'Tải Về cho iOS',
+                        hero_cta_android: 'Tải Về cho Android',
+                        section_features_title: 'Tính Năng Toàn Diện',
+                        section_features_subtitle: 'Mọi công cụ bạn cần cho mã QR và mã vạch.',
+                        feature_1_title: 'Quét Siêu Tốc',
+                        feature_1_desc: 'Quét mã QR và mã vạch trong tích tắc bằng camera hoặc từ thư viện ảnh.',
+                        feature_2_title: 'Tạo & Tùy Chỉnh Mã',
+                        feature_2_desc: 'Thiết kế mã QR độc đáo với logo, màu sắc và hình dạng theo ý muốn.',
+                        feature_3_title: 'Quản Lý Lịch Sử',
+                        feature_3_desc: 'Lưu trữ, sắp xếp và truy cập nhanh chóng lịch sử quét và tạo mã.',
+                        feature_4_title: 'Chia Sẻ & Xuất Dữ Liệu',
+                        feature_4_desc: 'Dễ dàng chia sẻ mã hoặc xuất dữ liệu quét dưới dạng CSV, Text, Image.',
+                        feature_5_title: 'Quét Hàng Loạt',
+                        feature_5_desc: 'Tiết kiệm thời gian bằng cách quét nhiều mã QR và mã vạch cùng một lúc.',
+                        feature_6_title: 'Hỗ Trợ Đa Ngôn Ngữ',
+                        feature_6_desc: 'Sử dụng ứng dụng với 18 ngôn ngữ khác nhau trên toàn thế giới.',
+                        section_how_it_works_title: 'Mua Sắm Thông Minh Hơn',
+                        section_how_it_works_subtitle: 'Quét mã vạch sản phẩm để so sánh giá và đưa ra quyết định tốt nhất.',
+                        step_1_title: '1. Quét Mã Vạch',
+                        step_1_desc: 'Hướng camera về phía mã vạch trên bất kỳ sản phẩm nào.',
+                        step_2_title: '2. Xem Chi Tiết',
+                        step_2_desc: 'Nhận ngay thông tin giá cả, mô tả và đánh giá sản phẩm.',
+                        step_3_title: '3. So Sánh & Mua',
+                        step_3_desc: 'Dễ dàng so sánh giá trên Google, Amazon... để tiết kiệm tối đa.',
+                        section_formats_title: 'Hỗ Trợ Mọi Định Dạng Phổ Biến',
+                        section_formats_subtitle: 'Chúng tôi tương thích với hầu hết các loại mã bạn gặp hàng ngày.',
+                        section_cta_title: 'Sẵn Sàng Trải Nghiệm QRBay?',
+                        section_cta_subtitle: 'Tải xuống ngay hôm nay để có trong tay công cụ quét và tạo mã mạnh mẽ nhất. Hoàn toàn miễn phí!',
+                        section_cta_button: 'Tải Xuống Miễn Phí',
+                        footer_policy: 'Chính Sách',
+                        footer_terms: 'Điều Khoản',
+                        footer_contact: 'Liên Hệ'
+                    },
+                    en: {
+                        nav_features: 'Features',
+                        nav_how_it_works: 'How It Works',
+                        nav_supported_formats: 'Formats',
+                        nav_download_now: 'Download Now',
+                        hero_title: 'All-In-One <span class="gradient-text">QR & Barcode</span><br>Scanner',
+                        hero_subtitle: 'Scan, create, and manage all your codes with ease. The powerful assistant for shopping and daily information management.',
+                        hero_cta_ios: 'Download for iOS',
+                        hero_cta_android: 'Download for Android',
+                        section_features_title: 'Comprehensive Features',
+                        section_features_subtitle: 'Every tool you need for QR codes and barcodes.',
+                        feature_1_title: 'Lightning-Fast Scanning',
+                        feature_1_desc: 'Scan QR codes and barcodes in a flash using your camera or from your image library.',
+                        feature_2_title: 'Create & Customize Codes',
+                        feature_2_desc: 'Design unique QR codes with your logo, custom colors, and shapes.',
+                        feature_3_title: 'History Management',
+                        feature_3_desc: 'Save, organize, and quickly access your scan and creation history.',
+                        feature_4_title: 'Share & Export Data',
+                        feature_4_desc: 'Easily share codes or export scanned data as CSV, Text, or Image.',
+                        feature_5_title: 'Batch Scanning',
+                        feature_5_desc: 'Save time by scanning multiple QR codes and barcodes at once.',
+                        feature_6_title: 'Multi-Language Support',
+                        feature_6_desc: 'Use the app in 18 different languages from around the world.',
+                        section_how_it_works_title: 'Smarter Shopping',
+                        section_how_it_works_subtitle: 'Scan product barcodes to compare prices and make the best decision.',
+                        step_1_title: '1. Scan Barcode',
+                        step_1_desc: 'Point your camera at the barcode on any product.',
+                        step_2_title: '2. View Details',
+                        step_2_desc: 'Instantly get pricing information, descriptions, and product reviews.',
+                        step_3_title: '3. Compare & Buy',
+                        step_3_desc: 'Easily compare prices on Google, Amazon... to save the most.',
+                        section_formats_title: 'Supports All Common Formats',
+                        section_formats_subtitle: 'We are compatible with almost every type of code you encounter daily.',
+                        section_cta_title: 'Ready to Experience QRBay?',
+                        section_cta_subtitle: 'Download today to get the most powerful scanning and creation tool in your hands. Completely free!',
+                        section_cta_button: 'Download for Free',
+                        footer_policy: 'Policy',
+                        footer_terms: 'Terms',
+                        footer_contact: 'Contact'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Alpine.js for interactivity -->
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        /* Custom styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #4f46e5, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .cta-button {
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        [x-cloak] { display: none !important; }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200" x-data="appData()" x-bind:lang="language">
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 glassmorphism">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 inline-block mr-2 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                </svg>
+                QRBay
+            </h1>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#features" class="hover:text-indigo-400 transition-colors" x-text="texts[language].nav_features"></a>
+                <a href="#how-it-works" class="hover:text-indigo-400 transition-colors" x-text="texts[language].nav_how_it_works"></a>
+                <a href="#supported-formats" class="hover:text-indigo-400 transition-colors" x-text="texts[language].nav_supported_formats"></a>
+                <!-- Language Switcher -->
+                <div x-data="{ open: false }" class="relative">
+                    <button @click="open = !open" class="flex items-center hover:text-indigo-400 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9V3"/></svg>
+                        <span x-text="language.toUpperCase()"></span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                    </button>
+                    <div x-show="open" @click.away="open = false" x-cloak class="absolute top-full right-0 mt-2 w-28 bg-gray-800 rounded-lg shadow-lg border border-gray-700">
+                        <a href="#" @click.prevent="setLanguage('vi'); open = false" class="block px-4 py-2 text-sm hover:bg-gray-700">Tiếng Việt (VI)</a>
+                        <a href="#" @click.prevent="setLanguage('en'); open = false" class="block px-4 py-2 text-sm hover:bg-gray-700">English (EN)</a>
+                    </div>
+                </div>
+            </nav>
+            <a href="#download" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-full cta-button hidden md:inline-block" x-text="texts[language].nav_download_now"></a>
+            <button class="md:hidden text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-indigo-900/40 to-gray-900"></div>
+            <div class="absolute top-0 left-0 w-96 h-96 bg-pink-500/10 rounded-full filter blur-3xl opacity-50 animate-pulse"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-indigo-500/10 rounded-full filter blur-3xl opacity-50 animate-pulse animation-delay-4000"></div>
+            
+            <div class="container mx-auto px-6 text-center relative z-10">
+                <h2 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4 fade-in" x-html="texts[language].hero_title"></h2>
+                <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8 fade-in" style="animation-delay: 0.2s;" x-text="texts[language].hero_subtitle"></p>
+                <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 mb-12 fade-in" style="animation-delay: 0.4s;">
+                    <a href="#" class="cta-button bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full text-lg w-full sm:w-auto" x-text="texts[language].hero_cta_ios"></a>
+                    <a href="#" class="cta-button bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-8 rounded-full text-lg w-full sm:w-auto" x-text="texts[language].hero_cta_android"></a>
+                </div>
+
+                <div class="relative max-w-4xl mx-auto fade-in" style="animation-delay: 0.6s;">
+                    <img src="https://placehold.co/1000x550/111827/374151?text=Giao+diện+ứng+dụng+QRBay" 
+                         alt="Giao diện ứng dụng QRBay trên điện thoại" 
+                         class="rounded-2xl shadow-2xl border-4 border-gray-700">
+                    <div class="absolute -bottom-8 -right-8 w-48 h-48 hidden md:block">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=QRBayApp&bgcolor=111827&color=4F46E5&qzone=1" 
+                             alt="Ví dụ mã QR" 
+                             class="rounded-lg shadow-lg border-2 border-indigo-500">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="py-20 bg-gray-800/50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl md:text-4xl font-bold text-white" x-text="texts[language].section_features_title"></h3>
+                    <p class="text-gray-400 mt-2" x-text="texts[language].section_features_subtitle"></p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="glassmorphism p-6 rounded-2xl flex items-start space-x-4 hover:border-indigo-500 transition-all duration-300">
+                        <div class="bg-indigo-500/20 p-3 rounded-lg"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg></div>
+                        <div>
+                            <h4 class="font-bold text-lg text-white" x-text="texts[language].feature_1_title"></h4>
+                            <p class="text-gray-400" x-text="texts[language].feature_1_desc"></p>
+                        </div>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="glassmorphism p-6 rounded-2xl flex items-start space-x-4 hover:border-pink-500 transition-all duration-300">
+                        <div class="bg-pink-500/20 p-3 rounded-lg"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm0 2c-2.21 0-4 1.79-4 4v1h8v-1c0-2.21-1.79-4-4-4z"/></svg></div>
+                        <div>
+                            <h4 class="font-bold text-lg text-white" x-text="texts[language].feature_2_title"></h4>
+                            <p class="text-gray-400" x-text="texts[language].feature_2_desc"></p>
+                        </div>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div class="glassmorphism p-6 rounded-2xl flex items-start space-x-4 hover:border-green-500 transition-all duration-300">
+                        <div class="bg-green-500/20 p-3 rounded-lg"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
+                        <div>
+                            <h4 class="font-bold text-lg text-white" x-text="texts[language].feature_3_title"></h4>
+                            <p class="text-gray-400" x-text="texts[language].feature_3_desc"></p>
+                        </div>
+                    </div>
+                    <!-- Feature 4 -->
+                    <div class="glassmorphism p-6 rounded-2xl flex items-start space-x-4 hover:border-yellow-500 transition-all duration-300">
+                        <div class="bg-yellow-500/20 p-3 rounded-lg"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12s-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.368a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"/></svg></div>
+                        <div>
+                            <h4 class="font-bold text-lg text-white" x-text="texts[language].feature_4_title"></h4>
+                            <p class="text-gray-400" x-text="texts[language].feature_4_desc"></p>
+                        </div>
+                    </div>
+                     <!-- Feature 5 -->
+                    <div class="glassmorphism p-6 rounded-2xl flex items-start space-x-4 hover:border-purple-500 transition-all duration-300">
+                        <div class="bg-purple-500/20 p-3 rounded-lg"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg></div>
+                        <div>
+                            <h4 class="font-bold text-lg text-white" x-text="texts[language].feature_5_title"></h4>
+                            <p class="text-gray-400" x-text="texts[language].feature_5_desc"></p>
+                        </div>
+                    </div>
+                     <!-- Feature 6 -->
+                    <div class="glassmorphism p-6 rounded-2xl flex items-start space-x-4 hover:border-red-500 transition-all duration-300">
+                         <div class="bg-red-500/20 p-3 rounded-lg"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2h10a2 2 0 002-2v-1a2 2 0 012-2h1.945M7.737 9.512A4.5 4.5 0 0112 5.25c1.883 0 3.534.986 4.263 2.518m-8.526 0L6 11m12 0l-1.737-1.488M12 21a4.5 4.5 0 01-4.263-2.518m8.526 0L18 13"/></svg></div>
+                        <div>
+                            <h4 class="font-bold text-lg text-white" x-text="texts[language].feature_6_title"></h4>
+                            <p class="text-gray-400" x-text="texts[language].feature_6_desc"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl md:text-4xl font-bold text-white" x-text="texts[language].section_how_it_works_title"></h3>
+                    <p class="text-gray-400 mt-2" x-text="texts[language].section_how_it_works_subtitle"></p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <!-- Step 1 -->
+                    <div class="p-6">
+                        <div class="flex justify-center items-center mb-4 h-24">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        </div>
+                        <h4 class="font-bold text-xl mb-2 text-white" x-text="texts[language].step_1_title"></h4>
+                        <p class="text-gray-400" x-text="texts[language].step_1_desc"></p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="p-6">
+                        <div class="flex justify-center items-center mb-4 h-24">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                        </div>
+                        <h4 class="font-bold text-xl mb-2 text-white" x-text="texts[language].step_2_title"></h4>
+                        <p class="text-gray-400" x-text="texts[language].step_2_desc"></p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="p-6">
+                        <div class="flex justify-center items-center mb-4 h-24">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                        </div>
+                        <h4 class="font-bold text-xl mb-2 text-white" x-text="texts[language].step_3_title"></h4>
+                        <p class="text-gray-400" x-text="texts[language].step_3_desc"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Supported Formats Section -->
+        <section id="supported-formats" class="py-20 bg-gray-800/50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl md:text-4xl font-bold text-white" x-text="texts[language].section_formats_title"></h3>
+                    <p class="text-gray-400 mt-2" x-text="texts[language].section_formats_subtitle"></p>
+                </div>
+                <div class="max-w-4xl mx-auto">
+                    <div class="flex flex-wrap justify-center items-center gap-4 md:gap-6">
+                        <span class="bg-gray-700 text-gray-300 text-sm font-medium px-4 py-2 rounded-full">QRCode</span>
+                        <span class="bg-gray-700 text-gray-300 text-sm font-medium px-4 py-2 rounded-full">Data Matrix</span>
+                        <span class="bg-gray-700 text-gray-300 text-sm font-medium px-4 py-2 rounded-full">Aztec</span>
+                        <span class="bg-gray-700 text-gray-300 text-sm font-medium px-4 py-2 rounded-full">PDF 417</span>
+                        <span class="bg-gray-700 text-gray-300 text-sm font-medium px-4 py-2 rounded-full">UPC-A</span>
+                        <span class="bg-gray-700 text-gray-300 text-sm font-medium px-4 py-2 rounded-full">UPC-E</span>
+                        <span class="bg-gray-700 text-gray-300 text-sm font-medium px-4 py-2 rounded-full">EAN-8</span>
+                        <span class="bg-gray-700 text-gray-300 text-sm font-medium px-4 py-2 rounded-full">EAN-13</span>
+                        <span class="bg-gray-700 text-gray-300 text-sm font-medium px-4 py-2 rounded-full">Code 39</span>
+                        <span class="bg-gray-700 text-gray-300 text-sm font-medium px-4 py-2 rounded-full">Code 93</span>
+                        <span class="bg-gray-700 text-gray-300 text-sm font-medium px-4 py-2 rounded-full">Code 128</span>
+                        <span class="bg-gray-700 text-gray-300 text-sm font-medium px-4 py-2 rounded-full">Codabar</span>
+                        <span class="bg-gray-700 text-gray-300 text-sm font-medium px-4 py-2 rounded-full">ITF</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Section -->
+        <section id="download" class="py-20">
+            <div class="container mx-auto px-6 text-center">
+                 <h2 class="text-3xl md:text-4xl font-extrabold text-white leading-tight mb-4" x-text="texts[language].section_cta_title"></h2>
+                <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-8" x-text="texts[language].section_cta_subtitle"></p>
+                <div class="flex justify-center space-x-4">
+                    <a href="#" class="cta-button bg-gradient-to-r from-pink-500 to-indigo-600 hover:opacity-90 text-white font-bold py-4 px-10 rounded-full text-xl shadow-lg" x-text="texts[language].section_cta_button"></a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800">
+        <div class="container mx-auto px-6 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-center md:text-left mb-4 md:mb-0">
+                    <h3 class="text-xl font-bold text-white">QRBay</h3>
+                    <p class="text-gray-400">© 2024 QRBay. All Rights Reserved.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors" x-text="texts[language].footer_policy"></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors" x-text="texts[language].footer_terms"></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors" x-text="texts[language].footer_contact"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

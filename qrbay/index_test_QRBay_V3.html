@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QRBay - Quét QR & Mã Vạch Chuyên Nghiệp</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        .hero-gradient-text {
+            background: -webkit-linear-gradient(45deg, #3b82f6, #1e40af);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .cta-button {
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+        }
+        .lang-switcher button.active {
+            color: #2563eb; /* blue-600 */
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 shadow-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold hero-gradient-text">QRBay</a>
+            <div class="flex items-center gap-8">
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#features" class="text-gray-600 hover:text-blue-600" data-lang-key="navFeatures">Tính năng</a>
+                    <a href="#how-it-works" class="text-gray-600 hover:text-blue-600" data-lang-key="navHowItWorks">Cách hoạt động</a>
+                    <a href="#download" class="text-gray-600 hover:text-blue-600" data-lang-key="navDownload">Tải xuống</a>
+                </nav>
+                <div class="lang-switcher flex items-center gap-2 text-sm text-gray-500">
+                    <button id="lang-vi" class="active">VIE</button>
+                    <span>|</span>
+                    <button id="lang-en">ENG</button>
+                </div>
+            </div>
+            <a href="#download" class="hidden lg:block bg-blue-600 text-white font-semibold px-5 py-2 rounded-lg shadow-md hover:bg-blue-700 transition-colors" data-lang-key="navDownloadNow">Tải Ngay</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="pt-24 gradient-bg">
+        <section class="container mx-auto px-6 py-20 md:py-32 text-center">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight" data-lang-key="heroTitle">
+                    Trình Quét Mã <span class="hero-gradient-text">QR & Mã Vạch</span> Toàn Diện Nhất
+                </h1>
+                <p class="mt-6 text-lg md:text-xl text-gray-600 max-w-2xl mx-auto" data-lang-key="heroSubtitle">
+                    Quét, tạo và quản lý tất cả mã QR và mã vạch của bạn một cách dễ dàng. Công cụ mạnh mẽ cho mọi nhu cầu, từ mua sắm thông minh đến quản lý doanh nghiệp.
+                </p>
+                <div id="download" class="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <a href="#" class="cta-button w-full sm:w-auto flex items-center justify-center gap-3 bg-gray-800 text-white font-bold py-4 px-8 rounded-xl shadow-lg hover:bg-gray-900">
+                        <img src="https://placehold.co/32x32/ffffff/000000?text=" alt="Apple App Store" class="w-8 h-8">
+                        <div>
+                            <p class="text-xs" data-lang-key="downloadOn">Tải về trên</p>
+                            <p class="text-xl">App Store</p>
+                        </div>
+                    </a>
+                    <a href="#" class="cta-button w-full sm:w-auto flex items-center justify-center gap-3 bg-white text-gray-800 font-bold py-4 px-8 rounded-xl shadow-lg hover:bg-gray-100">
+                        <img src="https://placehold.co/32x32/000000/ffffff?text=▶" alt="Google Play Store" class="w-7 h-7">
+                         <div>
+                            <p class="text-xs" data-lang-key="availableOn">CÓ SẴN TRÊN</p>
+                            <p class="text-xl">Google Play</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-16 max-w-5xl mx-auto">
+                <img src="https://placehold.co/1200x600/c3cfe2/1e40af?text=QRBay+App+Interface" alt="Ảnh chụp màn hình ứng dụng QRBay" class="rounded-2xl shadow-2xl" data-lang-key="heroImageAlt" data-alt-vi="Ảnh chụp màn hình ứng dụng QRBay" data-alt-en="QRBay App Interface Screenshot">
+            </div>
+        </section>
+    </main>
+    
+    <!-- Features Section -->
+    <section id="features" class="py-20 md:py-28 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900" data-lang-key="featuresTitle">Tính Năng Đa Dạng, Sức Mạnh Vượt Trội</h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto" data-lang-key="featuresSubtitle">Mọi thứ bạn cần cho mã QR và mã vạch đều có ở đây.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="feature-card bg-gray-50 p-8 rounded-xl shadow-sm transition-all duration-300">
+                    <div class="bg-blue-100 text-blue-600 w-12 h-12 rounded-lg flex items-center justify-center mb-5"><i data-lucide="scan-line"></i></div>
+                    <h3 class="text-xl font-semibold mb-2" data-lang-key="feature1Title">Quét Mã QR & Mã Vạch</h3>
+                    <p class="text-gray-600" data-lang-key="feature1Desc">Sử dụng camera để quét mã nhanh chóng và chính xác chỉ trong vài giây.</p>
+                </div>
+                <div class="feature-card bg-gray-50 p-8 rounded-xl shadow-sm transition-all duration-300">
+                    <div class="bg-green-100 text-green-600 w-12 h-12 rounded-lg flex items-center justify-center mb-5"><i data-lucide="shopping-cart"></i></div>
+                    <h3 class="text-xl font-semibold mb-2" data-lang-key="feature2Title">So Sánh Giá Sản Phẩm</h3>
+                    <p class="text-gray-600" data-lang-key="feature2Desc">Quét mã vạch để xem giá và chi tiết sản phẩm, giúp bạn mua sắm thông minh hơn.</p>
+                </div>
+                <div class="feature-card bg-gray-50 p-8 rounded-xl shadow-sm transition-all duration-300">
+                    <div class="bg-purple-100 text-purple-600 w-12 h-12 rounded-lg flex items-center justify-center mb-5"><i data-lucide="qr-code"></i></div>
+                    <h3 class="text-xl font-semibold mb-2" data-lang-key="feature3Title">Tạo Mã QR & Mã Vạch</h3>
+                    <p class="text-gray-600" data-lang-key="feature3Desc">Tùy chỉnh và tạo mã của riêng bạn cho danh thiếp, Wi-Fi, sự kiện và hơn thế nữa.</p>
+                </div>
+                <div class="feature-card bg-gray-50 p-8 rounded-xl shadow-sm transition-all duration-300">
+                    <div class="bg-yellow-100 text-yellow-600 w-12 h-12 rounded-lg flex items-center justify-center mb-5"><i data-lucide="history"></i></div>
+                    <h3 class="text-xl font-semibold mb-2" data-lang-key="feature4Title">Quản Lý Lịch Sử</h3>
+                    <p class="text-gray-600" data-lang-key="feature4Desc">Lưu và sắp xếp lịch sử quét và tạo mã để dễ dàng truy cập lại khi cần.</p>
+                </div>
+                <div class="feature-card bg-gray-50 p-8 rounded-xl shadow-sm transition-all duration-300">
+                    <div class="bg-red-100 text-red-600 w-12 h-12 rounded-lg flex items-center justify-center mb-5"><i data-lucide="copy-plus"></i></div>
+                    <h3 class="text-xl font-semibold mb-2" data-lang-key="feature5Title">Quét Hàng Loạt</h3>
+                    <p class="text-gray-600" data-lang-key="feature5Desc">Quét nhiều mã QR và mã vạch cùng một lúc, lý tưởng cho quản lý kho và sự kiện.</p>
+                </div>
+                <div class="feature-card bg-gray-50 p-8 rounded-xl shadow-sm transition-all duration-300">
+                    <div class="bg-indigo-100 text-indigo-600 w-12 h-12 rounded-lg flex items-center justify-center mb-5"><i data-lucide="file-output"></i></div>
+                    <h3 class="text-xl font-semibold mb-2" data-lang-key="feature6Title">Xuất Dữ Liệu</h3>
+                    <p class="text-gray-600" data-lang-key="feature6Desc">Xuất dữ liệu của bạn dưới dạng CSV, văn bản, hoặc hình ảnh để phân tích và chia sẻ.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 md:py-28 gradient-bg">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900" data-lang-key="howItWorksTitle">Dễ Dàng Như Đếm 1, 2, 3</h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto" data-lang-key="howItWorksSubtitle">Bắt đầu chỉ với vài thao tác đơn giản.</p>
+            </div>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16">
+                <div class="text-center max-w-xs">
+                    <div class="bg-white p-6 rounded-full shadow-lg inline-block mb-4"><i data-lucide="camera" class="w-12 h-12 text-blue-600"></i></div>
+                    <h3 class="text-xl font-bold mb-2" data-lang-key="step1Title">1. Mở & Hướng Camera</h3>
+                    <p class="text-gray-600" data-lang-key="step1Desc">Khởi động ứng dụng và hướng camera của bạn vào mã QR hoặc mã vạch.</p>
+                </div>
+                <div class="hidden md:block text-gray-400"><i data-lucide="arrow-right" class="w-16 h-16"></i></div>
+                <div class="md:hidden text-gray-400"><i data-lucide="arrow-down" class="w-12 h-12"></i></div>
+                <div class="text-center max-w-xs">
+                    <div class="bg-white p-6 rounded-full shadow-lg inline-block mb-4"><i data-lucide="scan" class="w-12 h-12 text-green-600"></i></div>
+                    <h3 class="text-xl font-bold mb-2" data-lang-key="step2Title">2. Quét Tức Thì</h3>
+                    <p class="text-gray-600" data-lang-key="step2Desc">Ứng dụng sẽ tự động nhận diện và quét mã trong tích tắc.</p>
+                </div>
+                <div class="hidden md:block text-gray-400"><i data-lucide="arrow-right" class="w-16 h-16"></i></div>
+                <div class="md:hidden text-gray-400"><i data-lucide="arrow-down" class="w-12 h-12"></i></div>
+                <div class="text-center max-w-xs">
+                    <div class="bg-white p-6 rounded-full shadow-lg inline-block mb-4"><i data-lucide="check-circle-2" class="w-12 h-12 text-purple-600"></i></div>
+                    <h3 class="text-xl font-bold mb-2" data-lang-key="step3Title">3. Nhận Kết Quả</h3>
+                    <p class="text-gray-600" data-lang-key="step3Desc">Xem thông tin, mở liên kết, kết nối Wi-Fi hoặc lưu dữ liệu ngay lập tức.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Supported Formats & Languages -->
+    <section class="py-20 md:py-28 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6" data-lang-key="formatsTitle">Hỗ Trợ Tất Cả Định Dạng Phổ Biến</h3>
+                    <p class="text-gray-600 mb-8" data-lang-key="formatsDesc">QRBay tương thích với hầu hết các loại mã vạch 1D và 2D, đảm bảo bạn có thể quét mọi thứ, ở mọi nơi.</p>
+                    <div class="flex flex-wrap gap-3">
+                         <span class="bg-gray-200 text-gray-700 text-sm font-medium px-3 py-1 rounded-full">QRCode</span>
+                         <span class="bg-gray-200 text-gray-700 text-sm font-medium px-3 py-1 rounded-full">Data Matrix</span>
+                         <span class="bg-gray-200 text-gray-700 text-sm font-medium px-3 py-1 rounded-full">Aztec</span>
+                         <span class="bg-gray-200 text-gray-700 text-sm font-medium px-3 py-1 rounded-full">PDF 417</span>
+                         <span class="bg-gray-200 text-gray-700 text-sm font-medium px-3 py-1 rounded-full">EAN-13</span>
+                         <span class="bg-gray-200 text-gray-700 text-sm font-medium px-3 py-1 rounded-full">EAN-8</span>
+                         <span class="bg-gray-200 text-gray-700 text-sm font-medium px-3 py-1 rounded-full">UPC-A</span>
+                         <span class="bg-gray-200 text-gray-700 text-sm font-medium px-3 py-1 rounded-full">UPC-E</span>
+                         <span class="bg-gray-200 text-gray-700 text-sm font-medium px-3 py-1 rounded-full">Code 128</span>
+                         <span class="bg-gray-200 text-gray-700 text-sm font-medium px-3 py-1 rounded-full">Code 93</span>
+                         <span class="bg-gray-200 text-gray-700 text-sm font-medium px-3 py-1 rounded-full">Code 39</span>
+                         <span class="bg-gray-200 text-gray-700 text-sm font-medium px-3 py-1 rounded-full">Codabar</span>
+                         <span class="bg-gray-200 text-gray-700 text-sm font-medium px-3 py-1 rounded-full">ITF</span>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6" data-lang-key="languagesTitle">Phá Vỡ Rào Cản Ngôn Ngữ</h3>
+                    <p class="text-gray-600 mb-8" data-lang-key="languagesDesc">QRBay được thiết kế cho người dùng toàn cầu, hỗ trợ đến 18 ngôn ngữ khác nhau.</p>
+                     <div class="p-6 bg-gray-50 rounded-lg">
+                        <div class="flex items-center gap-4 mb-4">
+                            <i data-lucide="globe" class="w-10 h-10 text-blue-600"></i>
+                            <p class="font-bold text-lg" data-lang-key="languagesSupported">Hỗ trợ 18 ngôn ngữ</p>
+                        </div>
+                        <p class="text-gray-600 text-sm" data-lang-key="languagesList">
+                            Tiếng Việt, Anh, Indonesia, Trung, Thái, Hàn, Nhật, Pháp, Đức, Tây Ban Nha, Ba Lan, Thổ Nhĩ Kỳ, Nga, Bồ Đào Nha, Ý, Hà Lan, Ả Rập, Hindi.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="gradient-bg">
+        <div class="container mx-auto px-6 py-20 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900" data-lang-key="ctaTitle">Sẵn Sàng Trải Nghiệm?</h2>
+            <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto" data-lang-key="ctaSubtitle">Tải QRBay ngay hôm nay và khám phá công cụ quét mã mạnh mẽ, tiện lợi và hoàn toàn miễn phí.</p>
+             <div class="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#" class="cta-button w-full sm:w-auto flex items-center justify-center gap-3 bg-gray-800 text-white font-bold py-4 px-8 rounded-xl shadow-lg hover:bg-gray-900">
+                    <img src="https://placehold.co/32x32/ffffff/000000?text=" alt="Apple App Store" class="w-8 h-8">
+                    <div>
+                        <p class="text-xs" data-lang-key="downloadOn">Tải về trên</p>
+                        <p class="text-xl">App Store</p>
+                    </div>
+                </a>
+                <a href="#" class="cta-button w-full sm:w-auto flex items-center justify-center gap-3 bg-white text-gray-800 font-bold py-4 px-8 rounded-xl shadow-lg hover:bg-gray-100">
+                    <img src="https://placehold.co/32x32/000000/ffffff?text=▶" alt="Google Play Store" class="w-7 h-7">
+                     <div>
+                        <p class="text-xs" data-lang-key="availableOn">CÓ SẴN TRÊN</p>
+                        <p class="text-xl">Google Play</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-8">
+             <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-xl font-bold hero-gradient-text bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-200">QRBay</p>
+                <div class="flex mt-4 md:mt-0 space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white" data-lang-key="footerPrivacy">Chính sách bảo mật</a>
+                    <a href="#" class="text-gray-400 hover:text-white" data-lang-key="footerTerms">Điều khoản sử dụng</a>
+                    <a href="#" class="text-gray-400 hover:text-white" data-lang-key="footerContact">Liên hệ</a>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-500 text-sm">
+                <p>&copy; <span id="year"></span> QRBay. <span data-lang-key="footerRights">Đã đăng ký Bản quyền.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Language translation script
+        const translations = {
+            vi: {
+                // Nav
+                navFeatures: "Tính năng",
+                navHowItWorks: "Cách hoạt động",
+                navDownload: "Tải xuống",
+                navDownloadNow: "Tải Ngay",
+                // Hero
+                heroTitle: "Trình Quét Mã <span class='hero-gradient-text'>QR & Mã Vạch</span> Toàn Diện Nhất",
+                heroSubtitle: "Quét, tạo và quản lý tất cả mã QR và mã vạch của bạn một cách dễ dàng. Công cụ mạnh mẽ cho mọi nhu cầu, từ mua sắm thông minh đến quản lý doanh nghiệp.",
+                downloadOn: "Tải về trên",
+                availableOn: "CÓ SẴN TRÊN",
+                heroImageAlt: "Ảnh chụp màn hình ứng dụng QRBay",
+                // Features
+                featuresTitle: "Tính Năng Đa Dạng, Sức Mạnh Vượt Trội",
+                featuresSubtitle: "Mọi thứ bạn cần cho mã QR và mã vạch đều có ở đây.",
+                feature1Title: "Quét Mã QR & Mã Vạch",
+                feature1Desc: "Sử dụng camera để quét mã nhanh chóng và chính xác chỉ trong vài giây.",
+                feature2Title: "So Sánh Giá Sản Phẩm",
+                feature2Desc: "Quét mã vạch để xem giá và chi tiết sản phẩm, giúp bạn mua sắm thông minh hơn.",
+                feature3Title: "Tạo Mã QR & Mã Vạch",
+                feature3Desc: "Tùy chỉnh và tạo mã của riêng bạn cho danh thiếp, Wi-Fi, sự kiện và hơn thế nữa.",
+                feature4Title: "Quản Lý Lịch Sử",
+                feature4Desc: "Lưu và sắp xếp lịch sử quét và tạo mã để dễ dàng truy cập lại khi cần.",
+                feature5Title: "Quét Hàng Loạt",
+                feature5Desc: "Quét nhiều mã QR và mã vạch cùng một lúc, lý tưởng cho quản lý kho và sự kiện.",
+                feature6Title: "Xuất Dữ Liệu",
+                feature6Desc: "Xuất dữ liệu của bạn dưới dạng CSV, văn bản, hoặc hình ảnh để phân tích và chia sẻ.",
+                // How it works
+                howItWorksTitle: "Dễ Dàng Như Đếm 1, 2, 3",
+                howItWorksSubtitle: "Bắt đầu chỉ với vài thao tác đơn giản.",
+                step1Title: "1. Mở & Hướng Camera",
+                step1Desc: "Khởi động ứng dụng và hướng camera của bạn vào mã QR hoặc mã vạch.",
+                step2Title: "2. Quét Tức Thì",
+                step2Desc: "Ứng dụng sẽ tự động nhận diện và quét mã trong tích tắc.",
+                step3Title: "3. Nhận Kết Quả",
+                step3Desc: "Xem thông tin, mở liên kết, kết nối Wi-Fi hoặc lưu dữ liệu ngay lập tức.",
+                // Supported
+                formatsTitle: "Hỗ Trợ Tất Cả Định Dạng Phổ Biến",
+                formatsDesc: "QRBay tương thích với hầu hết các loại mã vạch 1D và 2D, đảm bảo bạn có thể quét mọi thứ, ở mọi nơi.",
+                languagesTitle: "Phá Vỡ Rào Cản Ngôn Ngữ",
+                languagesDesc: "QRBay được thiết kế cho người dùng toàn cầu, hỗ trợ đến 18 ngôn ngữ khác nhau.",
+                languagesSupported: "Hỗ trợ 18 ngôn ngữ",
+                languagesList: "Tiếng Việt, Anh, Indonesia, Trung, Thái, Hàn, Nhật, Pháp, Đức, Tây Ban Nha, Ba Lan, Thổ Nhĩ Kỳ, Nga, Bồ Đào Nha, Ý, Hà Lan, Ả Rập, Hindi.",
+                // CTA
+                ctaTitle: "Sẵn Sàng Trải Nghiệm?",
+                ctaSubtitle: "Tải QRBay ngay hôm nay và khám phá công cụ quét mã mạnh mẽ, tiện lợi và hoàn toàn miễn phí.",
+                // Footer
+                footerPrivacy: "Chính sách bảo mật",
+                footerTerms: "Điều khoản sử dụng",
+                footerContact: "Liên hệ",
+                footerRights: "Đã đăng ký Bản quyền."
+            },
+            en: {
+                 // Nav
+                navFeatures: "Features",
+                navHowItWorks: "How It Works",
+                navDownload: "Download",
+                navDownloadNow: "Download Now",
+                // Hero
+                heroTitle: "The Most Comprehensive <span class='hero-gradient-text'>QR & Barcode</span> Scanner",
+                heroSubtitle: "Scan, create, and manage all your QR codes and barcodes with ease. A powerful tool for every need, from smart shopping to business management.",
+                downloadOn: "Download on the",
+                availableOn: "GET IT ON",
+                heroImageAlt: "QRBay App Interface Screenshot",
+                // Features
+                featuresTitle: "Diverse Features, Superior Power",
+                featuresSubtitle: "Everything you need for QR codes and barcodes is right here.",
+                feature1Title: "Scan QR & Barcodes",
+                feature1Desc: "Use your device's camera to scan codes quickly and accurately in seconds.",
+                feature2Title: "Compare Product Prices",
+                feature2Desc: "Scan barcodes to check prices and product details, helping you shop smarter.",
+                feature3Title: "Create QR & Barcodes",
+                feature3Desc: "Customize and create your own codes for business cards, Wi-Fi, events, and more.",
+                feature4Title: "Manage History",
+                feature4Desc: "Save and organize your scan and creation history for easy access when needed.",
+                feature5Title: "Batch Scan",
+                feature5Desc: "Scan multiple QR codes and barcodes at once, ideal for inventory and event management.",
+                feature6Title: "Export Data",
+                feature6Desc: "Export your data as CSV, text, or images for easy analysis and sharing.",
+                // How it works
+                howItWorksTitle: "As Easy As 1, 2, 3",
+                howItWorksSubtitle: "Get started with just a few simple steps.",
+                step1Title: "1. Open & Point Camera",
+                step1Desc: "Launch the app and point your camera at a QR code or barcode.",
+                step2Title: "2. Instant Scan",
+                step2Desc: "The app will automatically recognize and scan the code in an instant.",
+                step3Title: "3. Get Results",
+                step3Desc: "View information, open links, connect to Wi-Fi, or save data immediately.",
+                // Supported
+                formatsTitle: "Supports All Popular Formats",
+                formatsDesc: "QRBay is compatible with most 1D and 2D barcode types, ensuring you can scan anything, anywhere.",
+                languagesTitle: "Breaking Language Barriers",
+                languagesDesc: "QRBay is designed for a global audience, supporting up to 18 different languages.",
+                languagesSupported: "Supports 18 languages",
+                languagesList: "English, Vietnamese, Indonesian, Chinese, Thai, Korean, Japanese, French, German, Spanish, Polish, Turkish, Russian, Portuguese, Italian, Dutch, Arabic, Hindi.",
+                // CTA
+                ctaTitle: "Ready to Get Started?",
+                ctaSubtitle: "Download QRBay today and discover a powerful, convenient, and completely free code scanning tool.",
+                // Footer
+                footerPrivacy: "Privacy Policy",
+                footerTerms: "Terms of Use",
+                footerContact: "Contact",
+                footerRights: "All Rights Reserved."
+            }
+        };
+
+        const langViBtn = document.getElementById('lang-vi');
+        const langEnBtn = document.getElementById('lang-en');
+
+        const setLanguage = (lang) => {
+            document.documentElement.lang = lang;
+            document.querySelectorAll('[data-lang-key]').forEach(element => {
+                const key = element.getAttribute('data-lang-key');
+                if (translations[lang] && translations[lang][key]) {
+                    // Check for special image alt attribute handling
+                    if (element.tagName === 'IMG' && key.includes('ImageAlt')) {
+                        element.alt = translations[lang][key];
+                    } else {
+                        // Use innerHTML to allow for tags like <span> in translations
+                        element.innerHTML = translations[lang][key];
+                    }
+                }
+            });
+
+            // Update active button style
+            if (lang === 'vi') {
+                langViBtn.classList.add('active');
+                langEnBtn.classList.remove('active');
+            } else {
+                langEnBtn.classList.add('active');
+                langViBtn.classList.remove('active');
+            }
+        };
+
+        langViBtn.addEventListener('click', () => setLanguage('vi'));
+        langEnBtn.addEventListener('click', () => setLanguage('en'));
+
+        // Set initial language based on browser preference or default to Vietnamese
+        const userLang = navigator.language || navigator.userLanguage;
+        if (userLang.startsWith('en')) {
+             setLanguage('en');
+        } else {
+            setLanguage('vi');
+        }
+    </script>
+
+</body>
+</html>
